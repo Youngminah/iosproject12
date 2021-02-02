@@ -12,65 +12,28 @@ class SecondViewController: UIViewController {
 
     @IBOutlet weak var playerImage: UIImageView!
     @IBOutlet weak var playerName: UILabel!
+    @IBOutlet weak var artistName: UILabel!
     @IBOutlet weak var playerButton: UIButton!
     @IBOutlet weak var timeSlider: UISlider!
     @IBOutlet weak var currentTimeLabel: UILabel!
     @IBOutlet weak var totalDurationLabel: UILabel!
     
-    var imagename : String?
+    var image : UIImage?
     var trackname : String?
+    var artist : String?
     let simplePlayer = Player.shared
     
     var timeObserver: Any?
     var isSeeking: Bool = false
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        updatePlayButton()
-        updateTime(time: CMTime.zero)
-        
-        print("화면2: viewDidLoad")
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        setData()
-        print("\n화면2: viewWillAppear")
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        print("화면2: viewDidAppear")
-        // TODO: TimeObserver 구현
-        //Core Media Time 로 0.1초씩 관찰하기
-        // CMTime(seconds: 1, preferredTimescale: 10) => 기준시간을 몇개로 분할? 0.1초임 결국
-        //디스패치는 나중에 자세히 배움 => 0.1초마다 UILabel을 업데이트 해야하는데, main스레드한테 알려주겟다 하는 내용임.
-        timeObserver = simplePlayer.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 10) , queue: DispatchQueue.main, using: { time in self.updateTime(time: time)  }) //time은 곡의 현재 시간임.
-        
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        print("화면2: viewWillDisappear")
-        simplePlayer.seek(to: CMTime.zero)
-        simplePlayer.pause()
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        simplePlayer.replaceCurrentItem(with: nil)
-        print("화면2: viewDidDisappear")
-    }
-    
-    
     func setData(){
         guard let trackname = self.trackname else {
             return
         }
-        guard let imagename = self.imagename else {
+        guard let trackimage = self.image else {
             return
         }
-        
-        guard let image1 = UIImage(named: "\(imagename).jpg") else {
-            return
-        }
-        self.playerImage.image = image1
+        self.playerImage.image = trackimage
         self.playerName.text = trackname
     }
     
@@ -99,6 +62,11 @@ class SecondViewController: UIViewController {
             simplePlayer.play()
         }
         updatePlayButton()
+    }
+    
+    func updateTintColor() {
+        playerButton.tintColor = DefaultStyle.Colors.tint
+        timeSlider.tintColor = DefaultStyle.Colors.tint
     }
 
     func updateTime(time: CMTime) {
@@ -134,4 +102,39 @@ class SecondViewController: UIViewController {
             self.playerButton.setImage(image, for: .normal)
         }
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updatePlayButton()
+        updateTime(time: CMTime.zero)
+        print("화면2: viewDidLoad")
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        setData()
+        updateTintColor()
+        print("\n화면2: viewWillAppear")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("화면2: viewDidAppear")
+        // TODO: TimeObserver 구현
+        //Core Media Time 로 0.1초씩 관찰하기
+        // CMTime(seconds: 1, preferredTimescale: 10) => 기준시간을 몇개로 분할? 0.1초임 결국
+        //디스패치는 나중에 자세히 배움 => 0.1초마다 UILabel을 업데이트 해야하는데, main스레드한테 알려주겟다 하는 내용임.
+        timeObserver = simplePlayer.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 10) , queue: DispatchQueue.main, using: { time in self.updateTime(time: time)  }) //time은 곡의 현재 시간임.
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print("화면2: viewWillDisappear")
+        simplePlayer.seek(to: CMTime.zero)
+        simplePlayer.pause()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        simplePlayer.replaceCurrentItem(with: nil)
+        print("화면2: viewDidDisappear")
+    }
+    
 }
+
