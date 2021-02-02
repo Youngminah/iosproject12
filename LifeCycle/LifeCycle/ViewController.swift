@@ -20,7 +20,6 @@ class ViewController: UIViewController {
     
     var tracks:[AVPlayerItem] = []
     
-    
     @IBAction func Track1Clicked(_ sender: Any) {
         guard let receiveViewController = self.storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as? SecondViewController else{
             return
@@ -29,12 +28,26 @@ class ViewController: UIViewController {
         receiveViewController.imagename = "슬라임1"
         receiveViewController.trackname = trackname1.text
         
-        let item = tracks[0]
+        let item = tracks[2]
         receiveViewController.simplePlayer.replaceCurrentItem(with: item)
         
         //self.present(receiveViewController, animated: true, completion: nil)
         self.navigationController?.pushViewController(receiveViewController, animated: true)
-
+    }
+    
+    @IBAction func Track2Clicked(_ sender: UIButton) {
+        guard let receiveViewController = self.storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as? SecondViewController else{
+            return
+        }
+        
+        receiveViewController.imagename = "슬라임2"
+        receiveViewController.trackname = trackname2.text
+        
+        let item = tracks[5]
+        receiveViewController.simplePlayer.replaceCurrentItem(with: item)
+        
+        //self.present(receiveViewController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(receiveViewController, animated: true)
     }
     
     func loadTracks() -> [AVPlayerItem] {
@@ -67,9 +80,5 @@ class ViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         print("화면1: viewDidDisappear")
     }
-    
-    
-
-
 }
 

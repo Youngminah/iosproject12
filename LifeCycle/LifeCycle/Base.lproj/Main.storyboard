@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Music Gallery-->
+        <!--오늘의 추천곡-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LifeCycle" customModuleProvider="target" sceneMemberID="viewController">
@@ -77,6 +77,9 @@
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                 <state key="normal" title="듣기"/>
+                                                                <connections>
+                                                                    <action selector="Track2Clicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ypG-gv-gD0"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -140,7 +143,7 @@
                             <constraint firstItem="5Sf-Oq-dv2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ZBf-vE-aLb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Music Gallery" id="VMB-X3-xq5"/>
+                    <navigationItem key="navigationItem" title="오늘의 추천곡" id="VMB-X3-xq5"/>
                     <size key="freeformSize" width="414" height="1200"/>
                     <connections>
                         <outlet property="trackImage1" destination="xIN-NK-TQP" id="Zzb-DC-O1v"/>
@@ -177,6 +180,11 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Uxt-iu-XG1">
                                 <rect key="frame" x="18" y="651" width="378" height="31"/>
+                                <connections>
+                                    <action selector="beginDrag:" destination="u7J-2d-IOd" eventType="editingDidBegin" id="qRd-Tb-x89"/>
+                                    <action selector="endDrag:" destination="u7J-2d-IOd" eventType="editingDidEnd" id="vhX-gc-eDa"/>
+                                    <action selector="seek:" destination="u7J-2d-IOd" eventType="valueChanged" id="E8C-bb-UGy"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOS-zC-GwM">
                                 <rect key="frame" x="20" y="691" width="46" height="21"/>
@@ -196,7 +204,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
                                 <connections>
-                                    <action selector="togglePlayButton:" destination="u7J-2d-IOd" eventType="touchUpInside" id="f2N-Gd-R1a"/>
+                                    <action selector="togglePlayButton:" destination="u7J-2d-IOd" eventType="touchUpInside" id="tSs-m3-zJL"/>
                                 </connections>
                             </button>
                         </subviews>
