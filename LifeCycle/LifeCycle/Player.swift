@@ -19,8 +19,8 @@ class Player {
     // TODO: 싱글톤 만들기, 왜 만드는가?
     // 싱글톤 객체 => 객체를 한개만 만들고 여기저기서 쓴다.
     static let shared = Player()
-    
     private let player = AVPlayer()
+    var like: Int
 
     var currentTime: Double {
         // TODO: currentTime 구하기
@@ -42,7 +42,10 @@ class Player {
         return player.currentItem
     }
     
-    init() { }
+    init() {
+        let tmp = UserDefaults.standard.integer(forKey: "like")
+        like = tmp
+    }
     
     func pause() {
         // TODO: pause구현

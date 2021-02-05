@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--오늘의 추천곡-->
+        <!--랜덤 플레이리스트-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LifeCycle" customModuleProvider="target" sceneMemberID="viewController">
@@ -181,7 +181,7 @@
                             <constraint firstItem="5Sf-Oq-dv2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ZBf-vE-aLb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="오늘의 추천곡" id="VMB-X3-xq5"/>
+                    <navigationItem key="navigationItem" title="랜덤 플레이리스트" id="VMB-X3-xq5"/>
                     <size key="freeformSize" width="414" height="1610"/>
                     <connections>
                         <outlet property="trackImage1" destination="xIN-NK-TQP" id="Zzb-DC-O1v"/>
@@ -208,25 +208,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="슬라임2" translatesAutoresizingMaskIntoConstraints="NO" id="ahC-TA-xsc">
-                                <rect key="frame" x="7" y="94" width="400" height="400"/>
+                                <rect key="frame" x="7" y="54" width="400" height="400"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ahC-TA-xsc" secondAttribute="height" multiplier="1:1" id="saW-5W-zp8"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYw-wR-Q0W">
-                                <rect key="frame" x="173" y="534" width="68" height="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track1" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYw-wR-Q0W">
+                                <rect key="frame" x="0.0" y="494" width="414" height="26.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아티스트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6y-K1-LnX">
-                                <rect key="frame" x="177.5" y="571" width="59" height="21"/>
+                                <rect key="frame" x="177.5" y="530.5" width="59" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Uxt-iu-XG1">
-                                <rect key="frame" x="18" y="632" width="378" height="31"/>
+                                <rect key="frame" x="18" y="743" width="378" height="31"/>
                                 <connections>
                                     <action selector="beginDrag:" destination="u7J-2d-IOd" eventType="editingDidBegin" id="qRd-Tb-x89"/>
                                     <action selector="endDrag:" destination="u7J-2d-IOd" eventType="editingDidEnd" id="vhX-gc-eDa"/>
@@ -234,19 +234,19 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOS-zC-GwM">
-                                <rect key="frame" x="20" y="672" width="46" height="21"/>
+                                <rect key="frame" x="20" y="783" width="46" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgp-yr-NWp">
-                                <rect key="frame" x="348" y="672" width="46" height="21"/>
+                                <rect key="frame" x="348" y="783" width="46" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENo-zW-IAY">
-                                <rect key="frame" x="189" y="712" width="36" height="39"/>
+                                <rect key="frame" x="189" y="793" width="36" height="39"/>
                                 <state key="normal" image="play.fill" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
@@ -254,31 +254,54 @@
                                     <action selector="togglePlayButton:" destination="u7J-2d-IOd" eventType="touchUpInside" id="tSs-m3-zJL"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="좋아요: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cW-0z-s6i">
+                                <rect key="frame" x="304" y="711" width="53" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TFg-5c-a3S">
+                                <rect key="frame" x="365" y="707" width="24" height="25.5"/>
+                                <state key="normal" image="hand.thumbsup" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
+                                </state>
+                                <connections>
+                                    <action selector="likeClicked:" destination="u7J-2d-IOd" eventType="touchUpInside" id="UdJ-Jj-Du2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bL2-kL-mrp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="y6y-K1-LnX" firstAttribute="centerX" secondItem="bL2-kL-mrp" secondAttribute="centerX" id="0Lb-kt-ZMs"/>
-                            <constraint firstItem="ENo-zW-IAY" firstAttribute="top" secondItem="Uxt-iu-XG1" secondAttribute="bottom" constant="50" id="5IJ-aS-cqv"/>
+                            <constraint firstItem="ENo-zW-IAY" firstAttribute="top" secondItem="Uxt-iu-XG1" secondAttribute="bottom" constant="20" id="5IJ-aS-cqv"/>
                             <constraint firstItem="bL2-kL-mrp" firstAttribute="trailing" secondItem="Uxt-iu-XG1" secondAttribute="trailing" constant="20" id="8fS-DH-gIz"/>
+                            <constraint firstItem="bL2-kL-mrp" firstAttribute="trailing" secondItem="TFg-5c-a3S" secondAttribute="trailing" constant="25" id="G0l-61-LCm"/>
                             <constraint firstItem="ahC-TA-xsc" firstAttribute="leading" secondItem="bL2-kL-mrp" secondAttribute="leading" constant="7" id="HHx-TN-DKu"/>
                             <constraint firstItem="xgp-yr-NWp" firstAttribute="top" secondItem="Uxt-iu-XG1" secondAttribute="bottom" constant="10" id="JVA-FX-6lE"/>
                             <constraint firstItem="xgp-yr-NWp" firstAttribute="trailing" secondItem="Uxt-iu-XG1" secondAttribute="trailing" id="KCK-U7-mOp"/>
+                            <constraint firstItem="Uxt-iu-XG1" firstAttribute="top" secondItem="0cW-0z-s6i" secondAttribute="bottom" constant="15" id="KHV-3X-est"/>
                             <constraint firstItem="VOS-zC-GwM" firstAttribute="top" secondItem="Uxt-iu-XG1" secondAttribute="bottom" constant="10" id="NYK-u0-aeH"/>
                             <constraint firstItem="cYw-wR-Q0W" firstAttribute="centerX" secondItem="ahC-TA-xsc" secondAttribute="centerX" id="VXb-VS-rC2"/>
+                            <constraint firstItem="cYw-wR-Q0W" firstAttribute="leading" secondItem="bL2-kL-mrp" secondAttribute="leading" id="WJP-X6-hZN"/>
                             <constraint firstItem="ENo-zW-IAY" firstAttribute="centerX" secondItem="ahC-TA-xsc" secondAttribute="centerX" id="WeI-yr-DiI"/>
                             <constraint firstItem="cYw-wR-Q0W" firstAttribute="top" secondItem="ahC-TA-xsc" secondAttribute="bottom" constant="40" id="XFD-Te-3LZ"/>
                             <constraint firstItem="Uxt-iu-XG1" firstAttribute="leading" secondItem="bL2-kL-mrp" secondAttribute="leading" constant="20" id="YTJ-cs-jUy"/>
-                            <constraint firstItem="ahC-TA-xsc" firstAttribute="top" secondItem="bL2-kL-mrp" secondAttribute="top" constant="50" id="ZKx-3I-01F"/>
-                            <constraint firstItem="Uxt-iu-XG1" firstAttribute="top" secondItem="y6y-K1-LnX" secondAttribute="bottom" constant="40" id="dRb-WT-7bU"/>
+                            <constraint firstItem="ahC-TA-xsc" firstAttribute="top" secondItem="bL2-kL-mrp" secondAttribute="top" constant="10" id="ZKx-3I-01F"/>
+                            <constraint firstItem="bL2-kL-mrp" firstAttribute="bottom" secondItem="ENo-zW-IAY" secondAttribute="bottom" constant="30" id="dSU-s7-TCI"/>
                             <constraint firstItem="y6y-K1-LnX" firstAttribute="top" secondItem="cYw-wR-Q0W" secondAttribute="bottom" constant="10" id="eVm-ZT-TZE"/>
+                            <constraint firstItem="0cW-0z-s6i" firstAttribute="centerY" secondItem="TFg-5c-a3S" secondAttribute="centerY" id="fTZ-pF-HpL"/>
+                            <constraint firstItem="TFg-5c-a3S" firstAttribute="leading" secondItem="0cW-0z-s6i" secondAttribute="trailing" constant="8" symbolic="YES" id="gzZ-qd-rH8"/>
                             <constraint firstItem="VOS-zC-GwM" firstAttribute="leading" secondItem="Uxt-iu-XG1" secondAttribute="leading" id="m4h-er-At7"/>
                             <constraint firstItem="bL2-kL-mrp" firstAttribute="trailing" secondItem="ahC-TA-xsc" secondAttribute="trailing" constant="7" id="rvN-wn-9VZ"/>
+                            <constraint firstItem="bL2-kL-mrp" firstAttribute="trailing" secondItem="cYw-wR-Q0W" secondAttribute="trailing" id="vZh-Dv-Xth"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="artistName" destination="y6y-K1-LnX" id="9Ta-vo-H5V"/>
                         <outlet property="currentTimeLabel" destination="VOS-zC-GwM" id="9tg-Im-gt6"/>
+                        <outlet property="likeButton" destination="TFg-5c-a3S" id="ZB8-wM-vDM"/>
+                        <outlet property="likeCount" destination="0cW-0z-s6i" id="L1e-Uf-R5o"/>
                         <outlet property="playerButton" destination="ENo-zW-IAY" id="jjh-Jc-Djf"/>
                         <outlet property="playerImage" destination="ahC-TA-xsc" id="9vp-ex-wVg"/>
                         <outlet property="playerName" destination="cYw-wR-Q0W" id="yRn-Ze-Yra"/>
@@ -293,7 +316,7 @@
         <!--Navigation Controller-->
         <scene sceneID="QRP-XX-T9N">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="094-fd-MUg" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navigationViewController" automaticallyAdjustsScrollViewInsets="NO" id="094-fd-MUg" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cB2-qd-erj">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -310,6 +333,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="hand.thumbsup" catalog="system" width="128" height="128"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="슬라임1" width="1063" height="1063"/>
         <image name="슬라임2" width="856" height="933"/>

@@ -18,6 +18,10 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var currentTimeLabel: UILabel!
     @IBOutlet weak var totalDurationLabel: UILabel!
     
+    @IBOutlet weak var likeCount: UILabel!
+    @IBOutlet weak var likeButton: UIButton!
+    var islikeup: Bool = false
+    
     var image : UIImage?
     var trackname : String?
     var artist : String?
@@ -33,8 +37,18 @@ class SecondViewController: UIViewController {
         guard let trackimage = self.image else {
             return
         }
+        guard let trackartist = self.artist else {
+            return
+        }
         self.playerImage.image = trackimage
         self.playerName.text = trackname
+        self.artistName.text = trackartist
+        
+        let configuration = UIImage.SymbolConfiguration(pointSize: 20)
+        let image = UIImage(systemName: "hand.thumbsup", withConfiguration: configuration)
+        self.likeButton?.setImage(image, for: .normal)
+        self.likeCount.text = "좋아요: \(simplePlayer.like)"
+        islikeup = false
     }
     
     @IBAction func beginDrag(_ sender: UISlider){
@@ -62,6 +76,17 @@ class SecondViewController: UIViewController {
             simplePlayer.play()
         }
         updatePlayButton()
+    }
+    
+    @IBAction func likeClicked(_ sender: UIButton) {
+        if (!islikeup) {
+            let configuration = UIImage.SymbolConfiguration(pointSize: 20)
+            let image = UIImage(systemName: "hand.thumbsup.fill", withConfiguration: configuration)
+            self.likeButton?.setImage(image, for: .normal)
+            islikeup = true
+            simplePlayer.like += 1
+            self.likeCount.text = "좋아요: \(simplePlayer.like)"
+        }
     }
     
     func updateTintColor() {
@@ -95,11 +120,11 @@ class SecondViewController: UIViewController {
         if simplePlayer.isPlaying{
             let configuration = UIImage.SymbolConfiguration(pointSize: 40)
             let image = UIImage(systemName: "pause.fill", withConfiguration: configuration)
-            self.playerButton.setImage(image, for: .normal)
+            self.playerButton?.setImage(image, for: .normal)
         } else {
             let configuration = UIImage.SymbolConfiguration(pointSize: 40)
             let image = UIImage(systemName: "play.fill", withConfiguration: configuration)
-            self.playerButton.setImage(image, for: .normal)
+            self.playerButton?.setImage(image, for: .normal)
         }
     }
     
@@ -118,17 +143,16 @@ class SecondViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         print("화면2: viewDidAppear")
-        // TODO: TimeObserver 구현
-        //Core Media Time 로 0.1초씩 관찰하기
-        // CMTime(seconds: 1, preferredTimescale: 10) => 기준시간을 몇개로 분할? 0.1초임 결국
-        //디스패치는 나중에 자세히 배움 => 0.1초마다 UILabel을 업데이트 해야하는데, main스레드한테 알려주겟다 하는 내용임.
         timeObserver = simplePlayer.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 10) , queue: DispatchQueue.main, using: { time in self.updateTime(time: time)  }) //time은 곡의 현재 시간임.
+        simplePlayer.play()
+        updatePlayButton()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         print("화면2: viewWillDisappear")
         simplePlayer.seek(to: CMTime.zero)
         simplePlayer.pause()
+        updatePlayButton()
     }
     
     override func viewDidDisappear(_ animated: Bool) {

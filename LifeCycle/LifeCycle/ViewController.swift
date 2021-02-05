@@ -33,6 +33,7 @@ class ViewController: UIViewController {
         
         receiveViewController.image = trackImage1.image
         receiveViewController.trackname = trackname1.text
+        receiveViewController.artist = trackartist1.text
         
         let item = randomTrack[0]
         receiveViewController.simplePlayer.replaceCurrentItem(with: item)
@@ -48,6 +49,7 @@ class ViewController: UIViewController {
         
         receiveViewController.image = trackImage2.image
         receiveViewController.trackname = trackname2.text
+        receiveViewController.artist = trackartist2.text
         
         let item = randomTrack[1]
         receiveViewController.simplePlayer.replaceCurrentItem(with: item)
@@ -63,6 +65,7 @@ class ViewController: UIViewController {
         
         receiveViewController.image = trackImage3.image
         receiveViewController.trackname = trackname3.text
+        receiveViewController.artist = trackartist3.text
         
         let item = randomTrack[2]
         receiveViewController.simplePlayer.replaceCurrentItem(with: item)
