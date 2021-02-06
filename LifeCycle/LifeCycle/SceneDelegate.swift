@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Release any resources associated with this scene that can be re-created the next time the scene connects.
         // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
         print("sceneDidDisconnect")
-        UserDefaults.standard.set(simplePlayer.like, forKey: "like")
+        UserDefaults.standard.set(simplePlayer.like, forKey: "like") //앱이 꺼질때 지금까지 누른 좋아요 스토리지에 저장.
     }
 
     //active함수는 홈으로 나가지 않고 화면만 줄여도 실행되는생명주기.
@@ -34,6 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
         print("sceneDidBecomeActive")
+        //화면 잠깐 멈춘게 다시 돌아오면 다시 플레이된다.
         if (restart){
             simplePlayer.play()
         }else{
@@ -45,6 +46,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called when the scene will move from an active state to an inactive state.
         // This may occur due to temporary interruptions (ex. an incoming phone call).
         print("sceneWillResignActive")
+        
+        //화면이 잠깐 사라지면 플레이 멈춤
         if(simplePlayer.isPlaying){
             restart = true
             simplePlayer.pause()
@@ -53,12 +56,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
 
-    //이곳에 이어재생을 넣으니 처음 시작할때도 뜸.
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
         print("sceneWillEnterForeground")
-        simplePlayer.like = UserDefaults.standard.integer(forKey: "like")
+        simplePlayer.like = UserDefaults.standard.integer(forKey: "like") // 화면이 띄워질때 저장한 좋아요수 가져오기
 
     }
 
@@ -67,6 +69,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+        //메세지 띠우기
         print("sceneDidEnterBackground")
         let alert = UIAlertController(title: nil, message:"음악을 이어 재생합니다", preferredStyle: UIAlertController.Style.alert)
         // add an action (button)

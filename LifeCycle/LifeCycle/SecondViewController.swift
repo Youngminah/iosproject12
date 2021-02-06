@@ -128,35 +128,38 @@ class SecondViewController: UIViewController {
         }
     }
     
+    //맨처음 실행되는 생명주기
     override func viewDidLoad() {
         super.viewDidLoad()
-        updatePlayButton()
-        updateTime(time: CMTime.zero)
+        updatePlayButton() //플레이버튼 업데이트
+        updateTime(time: CMTime.zero) //실행을 처음부터 하게하기
         print("화면2: viewDidLoad")
     }
 
+    //화면이 보여지기 직전.
     override func viewWillAppear(_ animated: Bool) {
-        setData()
-        updateTintColor()
+        setData() //이전 화면에서 받아온 데이터 보여주기
+        updateTintColor() //다크모드 대비
         print("\n화면2: viewWillAppear")
     }
     
     override func viewDidAppear(_ animated: Bool) {
         print("화면2: viewDidAppear")
+        //타임 옵저버 추가
         timeObserver = simplePlayer.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 10) , queue: DispatchQueue.main, using: { time in self.updateTime(time: time)  }) //time은 곡의 현재 시간임.
-        simplePlayer.play()
-        updatePlayButton()
+        simplePlayer.play() //화면이 뜨면 재생시키기
+        updatePlayButton() //재생시키고 버튼모양도 바꿔주기
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         print("화면2: viewWillDisappear")
-        simplePlayer.seek(to: CMTime.zero)
-        simplePlayer.pause()
-        updatePlayButton()
+        simplePlayer.seek(to: CMTime.zero) //화면을 나가게 되면 다시 처음부터 시작한다.
+        simplePlayer.pause() //재생 멈추기
+        updatePlayButton() //재생 멈추고 플레이버튼 바꾸기
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        simplePlayer.replaceCurrentItem(with: nil)
+        simplePlayer.replaceCurrentItem(with: nil) //화면이 사라지게 될때에는 플레이어에 들어가있는 현재 아이템을 빼준다.
         print("화면2: viewDidDisappear")
     }
     

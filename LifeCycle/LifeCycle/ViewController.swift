@@ -86,19 +86,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tracks = loadTracks()
+        self.tracks = loadTracks() //가지고있는 모든 트랙들 정보 가져오기.
         print("화면1: viewDidLoad")
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let len = UInt32(tracks.count)
+        let len = UInt32(tracks.count) //랜덤트랙 선택하기.
         while randomTrack.count < 3 {
             let randomNo: Int = Int(arc4random_uniform(len));
             if !randomTrack.contains(tracks[randomNo]){
                 randomTrack.append(tracks[randomNo])
             }
         }
-        updateTrackInfo()
+        updateTrackInfo() //랜덤플레이리스트에 트랙 ui3개에 업뎃하기
         print(len)
         print("\n화면1: viewWillAppear")
     }
@@ -113,7 +113,7 @@ class ViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         print("화면1: viewDidDisappear")
-        randomTrack = []
+        randomTrack = [] //랜덤넣는 배열초기화
     }
     
     
