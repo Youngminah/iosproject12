@@ -8,6 +8,7 @@
 import UIKit
 
 
+// 코더블을 이용한 json생성하여 데이터 저장.
 struct Info: Codable, Equatable{
     
     let id: Int
@@ -23,8 +24,8 @@ struct Info: Codable, Equatable{
         self.isStar = isStar
     }
     
+    //id가 같으면 같은 것으로 판정.
     static func == (lhs: Self, rhs: Self) -> Bool {
-        // [x]TODO: 동등 조건 추가
         return lhs.id == rhs.id
     }
 
@@ -34,9 +35,7 @@ struct Info: Codable, Equatable{
 class InfoManager {
     
     static let shared = InfoManager()
-    
     static var lastId: Int = 0
-    
     var infos: [Info] = []
     
     func createInfo(dataName: String, dataNumber: String, dataImage: String, isStar: Bool) -> Info {
@@ -56,9 +55,6 @@ class InfoManager {
     func deleteInfo(_ info: Info) {
         // [x] TODO: delete 로직 추가
         infos = infos.filter { $0.id != info.id }
-//        if let index = todos.firstIndex(of: todo) {
-//            todos.remove(at: index)
-//        }
         saveInfo()
     }
 
@@ -75,7 +71,6 @@ class InfoManager {
 
     func retrieveInfo() {
         infos = Storage.retrive("test.json", from: .documents, as: [Info].self) ?? []
-
         let lastId = infos.last?.id ?? 0
         InfoManager.lastId = lastId
     }
