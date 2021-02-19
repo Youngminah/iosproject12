@@ -16,6 +16,7 @@
 		BBEDDB5F25DF987B001C6292 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDDB5E25DF987B001C6292 /* SecondViewController.swift */; };
 		BBEDDB6425DFD573001C6292 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDDB6325DFD573001C6292 /* Storage.swift */; };
 		BBEDDB6C25DFD90F001C6292 /* InfoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDDB6B25DFD90F001C6292 /* InfoList.swift */; };
+		BBEDDB7025E00155001C6292 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDDB6F25E00155001C6292 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		BBEDDB5E25DF987B001C6292 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		BBEDDB6325DFD573001C6292 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		BBEDDB6B25DFD90F001C6292 /* InfoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoList.swift; sourceTree = "<group>"; };
+		BBEDDB6F25E00155001C6292 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				BBEDDB4525DC05D3001C6292 /* SceneDelegate.swift */,
 				BBEDDB4725DC05D3001C6292 /* ViewController.swift */,
 				BBEDDB5E25DF987B001C6292 /* SecondViewController.swift */,
+				BBEDDB6F25E00155001C6292 /* DetailViewController.swift */,
 				BBEDDB4925DC05D3001C6292 /* Main.storyboard */,
 				BBEDDB6B25DFD90F001C6292 /* InfoList.swift */,
 				BBEDDB6325DFD573001C6292 /* Storage.swift */,
@@ -152,6 +155,7 @@
 				BBEDDB4425DC05D3001C6292 /* AppDelegate.swift in Sources */,
 				BBEDDB4625DC05D3001C6292 /* SceneDelegate.swift in Sources */,
 				BBEDDB6425DFD573001C6292 /* Storage.swift in Sources */,
+				BBEDDB7025E00155001C6292 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,34 +8,17 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
-//    var dataName = [
-//        ["철수","민수","영희"],
-//        ["아영","민희","영수"]
-//    ]
-//
-//    var dataNumber = [
-//        ["010-6565-6565","010-3456-3456","010-2435-3535"],
-//        ["010-7777-7777","010-3454-3535","010-3435-3434"]
-//    ]
-//
-//    var dataImage = [
-//        ["male.png","male.png","male.png"],
-//        ["male.png","male.png","male.png"]
-//    ]
     
-    var Infolist: [[Info]] = []
-    let heardername = ["즐겨찾기","친구"]
+    @IBOutlet weak var tableView: UITableView!
+    let heardername = ["즐겨찾기","친구목록"]
     
     let infoListViewModel = InfoViewModel()
     
-//    var name: String?
-//    var number: String?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        //저장되어있는 데이터 가져오기
         infoListViewModel.loadTasks()
+        // Do any additional setup after loading the view.
 //        let info = InfoManager.shared.createInfo(dataName: "영수", dataNumber: "010-6666-6666", dataImage: "male.png", isStar: false)
 //        Storage.saveTodo(info, fileName: "text.json")
     }
@@ -43,8 +26,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("viewWillAppear")
-        let info = Storage.restoreTodo("text.json")
-        print("\(info)")
+        tableView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -60,9 +42,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.navigationController?.pushViewController(receiveViewController, animated: true)
     }
     
+
+    
     //각 섹션의 들어있는 데이터 갯수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("실행")
         if section == 0 {
             return infoListViewModel.starInfos.count
         } else {
@@ -78,8 +61,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return infoListViewModel.numOfSection
     }
     
+    //해더 섹션 총 갯수 몇개 ?
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return heardername[section]
+    }
+    
+    //해더 섹션 폰트, 폰트크기 정하기
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
+    {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.font = UIFont(name: "Futura", size: 15)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -96,6 +87,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         cell.updateUI(info: info)
         
+        cell.starButtonTapHandler = { isStar in
+            info.isStar = isStar
+            self.infoListViewModel.updateInfo(info)
+            self.tableView.reloadData()
+        }
+        
 //        if indexPath.row == 5 {
 //            cell.backgroundColor = .white
 //        }else {
@@ -106,8 +103,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showDetail", sender: nil)
         print("클릭되었음.")
-        print(Infolist[1])
     }
 }
 
@@ -115,13 +112,23 @@ class ListCell: UITableViewCell{
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var starAdd: UIButton!
     
-
-
+    var starButtonTapHandler: ((Bool) -> Void)?
+    
     func updateUI(info: Info) {
         nameLabel.text = info.dataName
         numberLabel.text = info.dataNumber
+        imgView.layer.cornerRadius = 10;
         imgView.image = UIImage(named: info.dataImage)
+        starAdd.isSelected = info.isStar
     }
+    
+    @IBAction func starClicked(_ sender: UIButton) {
+        starAdd.isSelected = !starAdd.isSelected
+        let isStar = starAdd.isSelected
+        starButtonTapHandler?(isStar)
+    }
+    
 }
 
