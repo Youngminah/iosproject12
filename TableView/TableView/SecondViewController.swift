@@ -16,8 +16,10 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var femaleButton: UIButton!
     @IBOutlet weak var maleButton: UIButton!
     @IBOutlet weak var unspecButton: UIButton!
+    @IBOutlet weak var stackViewBottom: NSLayoutConstraint!
     
     var getImageName: String = "female.png"
+    var getNumber: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,9 @@ class SecondViewController: UIViewController {
         femaleButton.isSelected = true
         maleButton.isSelected = false
         unspecButton.isSelected = false
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView), name: UIResponder.keyboardWillHideNotification, object: nil)
         print("viewDidLoad()")
     }
     
@@ -55,7 +60,23 @@ class SecondViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
          self.view.endEditing(true)
-   }
+    }
+    
+    //전화번호에 - 삽입하기.
+    func phonenumberCharInsert(){
+        guard var num = personPhoneNum.text else {
+            return
+        }
+        if num.count == 11{
+            num.insert("-", at: num.index(num.startIndex, offsetBy: 3))
+            num.insert("-", at: num.index(num.endIndex, offsetBy: -4))
+        }
+        else {
+            num.insert("-", at: num.index(num.startIndex, offsetBy: 2))
+            num.insert("-", at: num.index(num.endIndex, offsetBy: -4))
+        }
+        self.getNumber = num
+    }
     
     //이름 입력 갯수 제한.
     @IBAction func nameTextEditChanging(_ sender: UITextField) {
@@ -79,10 +100,12 @@ class SecondViewController: UIViewController {
             self.present(dialog, animated: true, completion: nil)
             return
         }
-        let info = InfoManager.shared.createInfo(dataName: name, dataNumber: number, dataImage: getImageName, isStar: false)
+        phonenumberCharInsert()
+        let info = InfoManager.shared.createInfo(dataName: name, dataNumber: getNumber, dataImage: getImageName, isStar: false)
         InfoManager.shared.addInfo(info)
         self.navigationController?.popViewController(animated: true)
     }
+    
     
     @IBAction func cancelClicked(_ sender: Any) {
         let dialog = UIAlertController(title: "알림", message: "입력 중인 정보는 저장되지 않습니다.\n입력을 취소하시겠습니까?", preferredStyle: .alert)
@@ -96,3 +119,19 @@ class SecondViewController: UIViewController {
     }
 }
 
+extension SecondViewController {
+    @objc private func adjustInputView(noti: Notification) {
+        guard let userInfo = noti.userInfo else { return }
+        // [x] TODO: 키보드 높이에 따른 인풋뷰 위치 변경
+        guard let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        
+        if noti.name == UIResponder.keyboardWillShowNotification {
+            let adjustmentHeight = keyboardFrame.height - view.safeAreaInsets.bottom
+            stackViewBottom.constant = adjustmentHeight
+        } else {
+            stackViewBottom.constant = 120
+        }
+        
+        print("---> Keyboard End Frame: \(keyboardFrame)")
+    }
+}
