@@ -42,6 +42,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.navigationController?.pushViewController(receiveViewController, animated: true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            let vc = segue.destination as? DetailViewController
+            if let indexPath = sender as? IndexPath {
+                var info: Info
+                if indexPath.section == 0 {
+                    info = infoListViewModel.starInfos[indexPath.row]
+                } else {
+                    info = infoListViewModel.unstarInfos[indexPath.row]
+                }
+                vc?.name = info.dataName
+                vc?.number = info.dataNumber
+                vc?.img = UIImage(named: info.dataImage)
+            }
+        }
+    }
+    
 
     
     //각 섹션의 들어있는 데이터 갯수
@@ -103,7 +120,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showDetail", sender: nil)
+        performSegue(withIdentifier: "showDetail", sender: indexPath)
         print("클릭되었음.")
     }
 }

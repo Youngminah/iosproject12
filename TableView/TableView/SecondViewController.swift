@@ -51,44 +51,48 @@ class SecondViewController: UIViewController {
             personImage.image = UIImage(named: getImageName)
         }
     }
+    
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
          self.view.endEditing(true)
    }
     
+    //이름 입력 갯수 제한.
+    @IBAction func nameTextEditChanging(_ sender: UITextField) {
+        if (personName.text?.count ?? 0 > 11) {
+            personName.deleteBackward()
+        }
+    }
+    
+    //번호 입력 갯수 제한.
+    @IBAction func textfieldEditing(_ sender: UITextField) {
+        if (personPhoneNum.text?.count ?? 0 > 11) {
+            personPhoneNum.deleteBackward()
+        }
+    }
+    
     @IBAction func saveClicked(_ sender: Any) {
-        //let urlString = "TEL://010-1111-2222"
-        //let url:NSURL = URL(string: urlString)! as NSURL
-        //UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
-        
-//        guard let receiveViewController = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as? ViewController else{
-//            return
-//        }
-//        guard let name = personName.text else{
-//            return
-//        }
-//        guard let number = personPhoneNum.text else{
-//            return
-//        }
-//        receiveViewController.dataName[1].append(name)
-//        receiveViewController.dataNumber[1].append(number)
-//        receiveViewController.dataImage[1].append(getImageName)
-//        print(receiveViewController.dataName[1])
-        
-        
-        guard let name = personName.text, name.isEmpty == false else { return }
-        guard let number = personPhoneNum.text, name.isEmpty == false else { return }
+        guard let name = personName.text, name.isEmpty == false, let number = personPhoneNum.text, number.isEmpty == false else {
+            let dialog = UIAlertController(title: "필수", message: "이름 혹은 번호를 입력하세요.", preferredStyle: .alert)
+            let action = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
+            dialog.addAction(action)
+            self.present(dialog, animated: true, completion: nil)
+            return
+        }
         let info = InfoManager.shared.createInfo(dataName: name, dataNumber: number, dataImage: getImageName, isStar: false)
         InfoManager.shared.addInfo(info)
-//        infoListViewModel.addTodo(todo)
-//        collectionView.reloadData()
-//        inputTextField.text = ""
-//        isTodayButton.isSelected = false
-        
         self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func cancelClicked(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        let dialog = UIAlertController(title: "알림", message: "입력 중인 정보는 저장되지 않습니다.\n입력을 취소하시겠습니까?", preferredStyle: .alert)
+        let action1 = UIAlertAction(title: "아니요", style: UIAlertAction.Style.default)
+        let action2 = UIAlertAction(title: "예", style: UIAlertAction.Style.default){ (action: UIAlertAction) -> Void in
+            self.navigationController?.popViewController(animated: true)
+        }
+        dialog.addAction(action1)
+        dialog.addAction(action2)
+        self.present(dialog, animated: true, completion: nil)
     }
 }
 

@@ -197,6 +197,9 @@
                                                 <rect key="frame" x="70" y="0.0" width="274" height="38"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                <connections>
+                                                    <action selector="nameTextEditChanging:" destination="lfa-M3-yWD" eventType="editingChanged" id="MJh-AI-hqJ"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -301,10 +304,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="010-0000-0000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IvG-DU-w3o">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="01012341234" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IvG-DU-w3o">
                                                 <rect key="frame" x="70" y="0.0" width="274" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad" textContentType="username"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="username"/>
+                                                <connections>
+                                                    <action selector="textfieldEditing:" destination="lfa-M3-yWD" eventType="editingChanged" id="9RT-ts-U5v"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -370,7 +376,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3XU-P7-jyb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3XU-P7-jyb">
                                 <rect key="frame" x="97" y="500.66666666666669" width="220" height="28.666666666666686"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="3XU-P7-jyb" secondAttribute="height" multiplier="23:3" id="NCd-mv-cOC"/>
@@ -393,6 +399,9 @@
                                     <imageReference key="image" image="phone.fill" catalog="system" symbolScale="medium"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="35"/>
                                 </state>
+                                <connections>
+                                    <action selector="callClicked:" destination="pg9-xk-m4I" eventType="touchUpInside" id="hbJ-h8-mjd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="lZo-0f-6Ak">
                                 <rect key="frame" x="220" y="674" width="143" height="74"/>
@@ -429,6 +438,11 @@
                             <constraint firstItem="cf0-Dk-Exq" firstAttribute="top" secondItem="aES-kV-cb7" secondAttribute="bottom" constant="70" id="wKS-2F-7HV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="personimg" destination="aES-kV-cb7" id="di5-KV-188"/>
+                        <outlet property="personname" destination="cf0-Dk-Exq" id="YNE-Q4-t5I"/>
+                        <outlet property="personnumber" destination="3XU-P7-jyb" id="yot-ph-TeR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y5G-KN-LXE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
