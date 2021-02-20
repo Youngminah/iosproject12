@@ -52,6 +52,11 @@ class InfoManager {
         saveInfo()
     }
     
+    func insertInfo(_ info: Info,_ index: Int) {
+        infos.insert(info, at: index)
+        saveInfo()
+    }
+    
     func deleteInfo(_ info: Info) {
         // [x] TODO: delete 로직 추가
         infos = infos.filter { $0.id != info.id }
@@ -111,6 +116,10 @@ class InfoViewModel {
     
     func addInfo(_ info: Info) {
         manager.addInfo(info)
+    }
+    
+    func insertInfo(_ info: Info,_ index: Int) {
+        manager.insertInfo(info, index)
     }
     
     func deleteInfo(_ info: Info) {

@@ -22,6 +22,8 @@ class DetailViewController: UIViewController {
         updateUI()
     }
     
+    
+    
     func updateUI(){
         if let name = self.name, let number = self.number, let img = self.img{
             personname.text = name

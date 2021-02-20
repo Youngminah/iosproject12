@@ -17,6 +17,7 @@
 		BBEDDB6425DFD573001C6292 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDDB6325DFD573001C6292 /* Storage.swift */; };
 		BBEDDB6C25DFD90F001C6292 /* InfoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDDB6B25DFD90F001C6292 /* InfoList.swift */; };
 		BBEDDB7025E00155001C6292 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDDB6F25E00155001C6292 /* DetailViewController.swift */; };
+		BBEDDB8225E0EDB4001C6292 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDDB8125E0EDB4001C6292 /* EditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		BBEDDB6325DFD573001C6292 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		BBEDDB6B25DFD90F001C6292 /* InfoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoList.swift; sourceTree = "<group>"; };
 		BBEDDB6F25E00155001C6292 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BBEDDB8125E0EDB4001C6292 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				BBEDDB5E25DF987B001C6292 /* SecondViewController.swift */,
 				BBEDDB6F25E00155001C6292 /* DetailViewController.swift */,
 				BBEDDB4925DC05D3001C6292 /* Main.storyboard */,
+				BBEDDB8125E0EDB4001C6292 /* EditViewController.swift */,
 				BBEDDB6B25DFD90F001C6292 /* InfoList.swift */,
 				BBEDDB6325DFD573001C6292 /* Storage.swift */,
 				BBEDDB4C25DC05D4001C6292 /* Assets.xcassets */,
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBEDDB8225E0EDB4001C6292 /* EditViewController.swift in Sources */,
 				BBEDDB5F25DF987B001C6292 /* SecondViewController.swift in Sources */,
 				BBEDDB6C25DFD90F001C6292 /* InfoList.swift in Sources */,
 				BBEDDB4825DC05D3001C6292 /* ViewController.swift in Sources */,

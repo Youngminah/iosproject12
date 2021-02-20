@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITableViewDropDelegate, UITableViewDragDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,6 +18,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         //저장되어있는 데이터 가져오기
         infoListViewModel.loadTasks()
+        self.tableView.dragInteractionEnabled = true
+        self.tableView.dragDelegate = self
+        self.tableView.dropDelegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -120,7 +123,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return true
     }
     
-    //테이블 뷰 옆으로 밀어서 딜리트 시키기.
+    //테이블 뷰 trailing 옆으로 밀어서 딜리트 시키기.
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete){
             var info: Info
@@ -133,6 +136,73 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.tableView.reloadData()
         }
     }
+
+    //테이블 뷰 trailing 옆으로 밀어서 수정 시키기.
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath:IndexPath) -> UISwipeActionsConfiguration? {
+
+            let shareAction = UIContextualAction(style: .normal, title:  "수정", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+                
+                guard let receiveViewController = self.storyboard?.instantiateViewController(withIdentifier: "EditViewController") as? EditViewController else{
+                    return
+                }
+                
+                var info: Info
+                if indexPath.section == 0 {
+                    info = self.infoListViewModel.starInfos[indexPath.row]
+                } else {
+                    info = self.infoListViewModel.unstarInfos[indexPath.row]
+                }
+                
+                receiveViewController.getName = info.dataName
+                receiveViewController.getImageName = info.dataImage
+                receiveViewController.getNumber = info.dataNumber
+                receiveViewController.info = info
+                self.navigationController?.pushViewController(receiveViewController, animated: true)
+                success(true)
+                self.tableView.reloadData()
+            })
+            return UISwipeActionsConfiguration(actions:[shareAction])
+
+    }
+    
+    //테이블 뷰의 행을 옮길 수 있는지 ?
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    //테이블 뷰 드래그엔 드랍으로 행을 바꿔주기
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        if destinationIndexPath.section != sourceIndexPath.section{
+            print("같지않음")
+            return
+        }
+//        var info: Info
+//        if sourceIndexPath.section == 0 {
+//            info = self.infoListViewModel.starInfos[sourceIndexPath.row]
+//        } else {
+//            info = self.infoListViewModel.unstarInfos[sourceIndexPath.row]
+//        }
+//        self.infoListViewModel.deleteInfo(info)
+//        self.infoListViewModel.insertInfo(info, destinationIndexPath.row)
+//        self.tableView.reloadData()
+    }
+    
+    //테이블 뷰 드래그엔 드랍 프로토콜
+    func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        return [UIDragItem(itemProvider: NSItemProvider())]
+
+    }
+    
+    func tableView(_ tableView: UITableView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UITableViewDropProposal {
+        if session.localDragSession != nil {
+            return UITableViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
+        }
+        return UITableViewDropProposal(operation: .cancel, intent: .unspecified)
+    }
+    func tableView(_ tableView: UITableView, performDropWith coordinator: UITableViewDropCoordinator) {
+        
+    }
+
 }
 
 //커스텀 셸 만들기.
