@@ -91,7 +91,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ListCell else {
             return UITableViewCell()
         }
-        //스위치 문제 해결을 위해 각각 모든 cell을 지정해준다.
+        //재사용 문제 해결을 위해 각각 모든 cell을 지정해준다.
         var info: Info
         if indexPath.section == 0 {
             info = infoListViewModel.starInfos[indexPath.row]

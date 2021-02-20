@@ -37,7 +37,8 @@ class SecondViewController: UIViewController {
         unspecButton.isSelected = false
     }
     
-    @IBAction func radioGenderClicked(_ sender: UIButton) { //라디오 버튼 선택 했을 때, 이미지 변경
+    //라디오 버튼 선택 했을 때, 이미지 변경
+    @IBAction func radioGenderClicked(_ sender: UIButton) {
         if sender.tag == 1{
             femaleButton.isSelected = true
             maleButton.isSelected = false
@@ -61,7 +62,8 @@ class SecondViewController: UIViewController {
         }
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){ //화면 아무곳 클릭하면 키보드 내려가게 하기.
+    //화면 아무곳 클릭하면 키보드 내려가게 하기.
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
          self.view.endEditing(true)
     }
     
