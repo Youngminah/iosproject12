@@ -28,6 +28,17 @@ class ViewController: UIViewController {
         cardView.layer.shadowOffset = .zero
     }
     
+    @IBAction func startButtonClicked(_ sender: UIButton) {
+        guard !nameField.text!.trimmingCharacters(in: .whitespaces).isEmpty else {
+            return
+        }
+        let controller = storyboard?.instantiateViewController(identifier: "gameScene") as! GameViewController
+        controller.playerName = nameField.text
+        controller.modalTransitionStyle = .flipHorizontal
+        controller.modalPresentationStyle = .fullScreen
+        self.present(controller , animated: true, completion: nil)
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         nameField.resignFirstResponder()
     }

@@ -13,6 +13,7 @@
 		BBEDDC0625E69142001C6292 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBEDDC0425E69142001C6292 /* Main.storyboard */; };
 		BBEDDC0B25E69143001C6292 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBEDDC0925E69143001C6292 /* LaunchScreen.storyboard */; };
 		BBEDDC1525E691FD001C6292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBEDDC1425E691FD001C6292 /* Assets.xcassets */; };
+		BBEDDC1825E69274001C6292 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDDC1725E69274001C6292 /* GameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		BBEDDC0A25E69143001C6292 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBEDDC0C25E69143001C6292 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBEDDC1425E691FD001C6292 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../Downloads/TicTacToe Starter/TicTacToe/Assets.xcassets"; sourceTree = "<group>"; };
+		BBEDDC1725E69274001C6292 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				BBEDDBFE25E69142001C6292 /* AppDelegate.swift */,
 				BBEDDC0025E69142001C6292 /* SceneDelegate.swift */,
 				BBEDDC0225E69142001C6292 /* ViewController.swift */,
+				BBEDDC1725E69274001C6292 /* GameViewController.swift */,
 				BBEDDC0425E69142001C6292 /* Main.storyboard */,
 				BBEDDC0925E69143001C6292 /* LaunchScreen.storyboard */,
 				BBEDDC0C25E69143001C6292 /* Info.plist */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBEDDC1825E69274001C6292 /* GameViewController.swift in Sources */,
 				BBEDDC0325E69142001C6292 /* ViewController.swift in Sources */,
 				BBEDDBFF25E69142001C6292 /* AppDelegate.swift in Sources */,
 				BBEDDC0125E69142001C6292 /* SceneDelegate.swift in Sources */,

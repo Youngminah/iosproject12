@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TicTacToe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Thread" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +22,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="syA-x0-e3o">
                                 <rect key="frame" x="57" y="340" width="300" height="226.5"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grU-hl-w2B">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grU-hl-w2B">
                                         <rect key="frame" x="16" y="146.5" width="268" height="50"/>
                                         <color key="backgroundColor" red="0.1368685067" green="0.44108921290000003" blue="0.29409804940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -30,6 +31,9 @@
                                         <state key="normal" title="Start">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="startButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nwu-Vv-YkS"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQl-3Y-lxo">
                                         <rect key="frame" x="67.5" y="30" width="165.5" height="26.5"/>
@@ -68,6 +72,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="uGC-Kr-mUL" secondAttribute="bottom" id="0pn-gh-v27"/>
@@ -79,7 +84,6 @@
                             <constraint firstItem="syA-x0-e3o" firstAttribute="top" secondItem="qfO-0V-w9C" secondAttribute="bottom" constant="100" id="jVp-IX-ItW"/>
                             <constraint firstItem="syA-x0-e3o" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="tcZ-8g-D6x"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="cardView" destination="syA-x0-e3o" id="svl-Fs-EfI"/>
@@ -91,10 +95,10 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="121.875"/>
         </scene>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="t51-RH-sFI">
             <objects>
-                <viewController id="tzc-2A-Whk" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gameScene" id="tzc-2A-Whk" customClass="GameViewController" customModule="Thread" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oPr-SA-kAP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -286,6 +290,9 @@
                                 <state key="normal" image="close">
                                     <color key="titleColor" red="0.73027962449999995" green="0.23909628390000001" blue="0.42745614050000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="closeButtonClicked:" destination="tzc-2A-Whk" eventType="touchUpInside" id="hij-SP-PV1"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngb-5x-n5T">
                                 <rect key="frame" x="20" y="153" width="46.5" height="18"/>
@@ -318,7 +325,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="7GQ-Yd-swc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="nWI-SN-yFq" firstAttribute="trailing" secondItem="oPr-SA-kAP" secondAttribute="trailing" id="3Ex-ZL-Xg4"/>
                             <constraint firstAttribute="bottom" secondItem="nWI-SN-yFq" secondAttribute="bottom" id="5cE-x2-jdl"/>
@@ -342,9 +350,22 @@
                             <constraint firstItem="eBV-7N-tXQ" firstAttribute="centerX" secondItem="nWI-SN-yFq" secondAttribute="centerX" id="n98-TC-w8w"/>
                             <constraint firstItem="eEb-F5-q4k" firstAttribute="leading" secondItem="ngb-5x-n5T" secondAttribute="trailing" constant="8" id="s9J-FF-IQ1"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="7GQ-Yd-swc"/>
                     </view>
                     <navigationItem key="navigationItem" id="Szw-3n-XnU"/>
+                    <connections>
+                        <outlet property="box1" destination="1sb-oB-LV9" id="m2C-tx-G7H"/>
+                        <outlet property="box2" destination="aNE-dr-eaL" id="uyJ-qm-27X"/>
+                        <outlet property="box3" destination="lQc-xg-LcG" id="7b7-1U-Dd4"/>
+                        <outlet property="box4" destination="boQ-Wh-sFE" id="HNa-ax-Pwl"/>
+                        <outlet property="box5" destination="Mte-Ru-Kyf" id="8fq-LB-gkk"/>
+                        <outlet property="box6" destination="lHW-G3-Z1Q" id="Rsq-oB-Bth"/>
+                        <outlet property="box7" destination="bzU-r6-v65" id="i1v-8B-H3N"/>
+                        <outlet property="box8" destination="XQo-Ck-8aj" id="PFR-Qn-xPc"/>
+                        <outlet property="box9" destination="WZm-gC-LvH" id="4mz-MT-Skm"/>
+                        <outlet property="computerScoreLabel" destination="yHh-M4-AU5" id="OoD-uq-m1h"/>
+                        <outlet property="playerNameLabel" destination="ngb-5x-n5T" id="NYt-gF-k5i"/>
+                        <outlet property="playerScoreLabel" destination="eEb-F5-q4k" id="Gz9-0b-X3O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lkQ-U9-DKS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -354,6 +375,8 @@
     <resources>
         <image name="background" width="480" height="339"/>
         <image name="close" width="50" height="50"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
-
