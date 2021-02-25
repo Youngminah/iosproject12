@@ -154,7 +154,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxm-0T-ee1">
-                                <rect key="frame" x="249" y="694" width="65" height="36"/>
+                                <rect key="frame" x="249" y="806" width="65" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
@@ -162,7 +162,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10N-fw-5QV">
-                                <rect key="frame" x="70" y="694" width="81" height="36"/>
+                                <rect key="frame" x="70" y="806" width="81" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="10N-fw-5QV" secondAttribute="height" multiplier="9:4" id="8f7-cR-25N"/>
                                 </constraints>
@@ -179,7 +179,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="VYJ-c6-psL">
-                                <rect key="frame" x="35" y="502" width="344" height="128"/>
+                                <rect key="frame" x="35" y="614" width="344" height="128"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tTx-4b-ss0">
                                         <rect key="frame" x="0.0" y="0.0" width="344" height="38"/>
@@ -368,7 +368,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nmd-zT-8d8">
-                                        <rect key="frame" x="249" y="694" width="65" height="36"/>
+                                        <rect key="frame" x="249" y="806" width="65" height="36"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="Cancel"/>
                                         <connections>
@@ -376,7 +376,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pk-bc-qAP">
-                                        <rect key="frame" x="70" y="694" width="81" height="36"/>
+                                        <rect key="frame" x="70" y="806" width="81" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="4pk-bc-qAP" secondAttribute="height" multiplier="9:4" id="FoJ-pM-jHb"/>
                                         </constraints>
@@ -393,7 +393,7 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="uAr-U2-mhu">
-                                        <rect key="frame" x="35" y="502" width="344" height="128"/>
+                                        <rect key="frame" x="35" y="614" width="344" height="128"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ce3-Nm-s9C">
                                                 <rect key="frame" x="0.0" y="0.0" width="344" height="38"/>

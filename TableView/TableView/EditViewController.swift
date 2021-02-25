@@ -28,6 +28,7 @@ class EditViewController: UIViewController {
         //키보드가 올라오기를 감시하기 위한 옵저버
         NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView), name: UIResponder.keyboardWillHideNotification, object: nil)
+        removeSlash()
         updateUI()
         print("viewDidLoad()")
     }
@@ -56,6 +57,10 @@ class EditViewController: UIViewController {
         }
         
     }
+
+    func removeSlash(){
+        getNumber = getNumber.components(separatedBy: ["-"," "]).joined()
+    }
     
     func updateUI(){
         personname.text = getName
@@ -66,7 +71,7 @@ class EditViewController: UIViewController {
             malebutton.isSelected = false
             unspecbutton.isSelected = false
         }
-        else if getImageName == "female.png"{
+        else if getImageName == "male.png"{
             femalebutton.isSelected = false
             malebutton.isSelected = true
             unspecbutton.isSelected = false
@@ -75,7 +80,7 @@ class EditViewController: UIViewController {
             femalebutton.isSelected = false
             malebutton.isSelected = false
             unspecbutton.isSelected = true
-    
+        }
     }
     
     //전화번호에 "-" 삽입하기.
@@ -129,6 +134,7 @@ class EditViewController: UIViewController {
         dialog.addAction(action2)
         self.present(dialog, animated: true, completion: nil)
     }
+
 }
 
 
