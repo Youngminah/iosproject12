@@ -1,7 +1,6 @@
 
 # 미리보기 목차
 <br></br>
-<br></br>
 ### 📍  1.  화해 AutoLayout Clone 앱 (화해 어플 클론 코딩)
 [폴더바로가기](https://github.com/Youngminah/iosproject12/tree/master/FirstApp)
 
@@ -14,7 +13,7 @@
 
 -------------------------------------------------------
 <br></br>
-<br></br>
+
 ### 🎼  2. Random Music 추천 앱 (직접 구상)
 
 [폴더바로가기](https://github.com/Youngminah/iosproject12/tree/master/LifeCycle)
@@ -29,9 +28,9 @@
 
 ### ▶︎ 실행화면
 <img src="https://github.com/Youngminah/largegif/blob/master/randomMusic.gif" title="music gif" width="30%"/>
+<br></br>
 
 -------------------------------------------------------
-<br></br>
 <br></br>
 
 
@@ -49,9 +48,9 @@
 
 ### ▶︎ 실행화면
 <img src="https://github.com/Youngminah/largegif/blob/master/PhoneBook.gif" title="phone book gif" width="30%"/>
+<br></br>
 
 -------------------------------------------------------
-<br></br>
 <br></br>
 
 ### 🐳  4. Under The Sea - Game 앱 (직접 구상)
@@ -67,5 +66,4 @@
 
 ### ▶︎ 실행화면
 <img src="https://github.com/Youngminah/largegif/blob/master/UnderTheSea.gif" alt="under the sea gif" title="Databay showcase gif" width="30%"/>
-<br></br>
 <br></br>
