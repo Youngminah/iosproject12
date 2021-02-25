@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		BBEDDC3825E773EF001C6292 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDDC3725E773EF001C6292 /* AppDelegate.swift */; };
 		BBEDDC3A25E773EF001C6292 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDDC3925E773EF001C6292 /* SceneDelegate.swift */; };
-		BBEDDC3C25E773EF001C6292 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDDC3B25E773EF001C6292 /* ViewController.swift */; };
 		BBEDDC3F25E773EF001C6292 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBEDDC3D25E773EF001C6292 /* Main.storyboard */; };
 		BBEDDC4125E773F0001C6292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBEDDC4025E773F0001C6292 /* Assets.xcassets */; };
 		BBEDDC4425E773F0001C6292 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBEDDC4225E773F0001C6292 /* LaunchScreen.storyboard */; };
+		BBEDDC5025E78585001C6292 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDDC4F25E78585001C6292 /* IntroViewController.swift */; };
+		BBEDDC5525E78596001C6292 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDDC5425E78596001C6292 /* PlayViewController.swift */; };
+		BBEDDC5925E785B5001C6292 /* ExplainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDDC5825E785B5001C6292 /* ExplainViewController.swift */; };
+		BBEDDC5C25E785C2001C6292 /* PauseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDDC5B25E785C2001C6292 /* PauseViewController.swift */; };
+		BBEDDC6025E785D2001C6292 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDDC5F25E785D2001C6292 /* GameOverViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BBEDDC3425E773EF001C6292 /* MultiThreadGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiThreadGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBEDDC3725E773EF001C6292 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBEDDC3925E773EF001C6292 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BBEDDC3B25E773EF001C6292 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BBEDDC3E25E773EF001C6292 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BBEDDC4025E773F0001C6292 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBEDDC4325E773F0001C6292 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBEDDC4525E773F0001C6292 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBEDDC4F25E78585001C6292 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		BBEDDC5425E78596001C6292 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
+		BBEDDC5825E785B5001C6292 /* ExplainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainViewController.swift; sourceTree = "<group>"; };
+		BBEDDC5B25E785C2001C6292 /* PauseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseViewController.swift; sourceTree = "<group>"; };
+		BBEDDC5F25E785D2001C6292 /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,27 @@
 		BBEDDC3625E773EF001C6292 /* MultiThreadGame */ = {
 			isa = PBXGroup;
 			children = (
-				BBEDDC3725E773EF001C6292 /* AppDelegate.swift */,
-				BBEDDC3925E773EF001C6292 /* SceneDelegate.swift */,
-				BBEDDC3B25E773EF001C6292 /* ViewController.swift */,
+				BBEDDC4F25E78585001C6292 /* IntroViewController.swift */,
+				BBEDDC5425E78596001C6292 /* PlayViewController.swift */,
+				BBEDDC5825E785B5001C6292 /* ExplainViewController.swift */,
+				BBEDDC5B25E785C2001C6292 /* PauseViewController.swift */,
+				BBEDDC5F25E785D2001C6292 /* GameOverViewController.swift */,
 				BBEDDC3D25E773EF001C6292 /* Main.storyboard */,
-				BBEDDC4025E773F0001C6292 /* Assets.xcassets */,
 				BBEDDC4225E773F0001C6292 /* LaunchScreen.storyboard */,
-				BBEDDC4525E773F0001C6292 /* Info.plist */,
+				BBEDDC4D25E78518001C6292 /* Supporting Files */,
 			);
 			path = MultiThreadGame;
+			sourceTree = "<group>";
+		};
+		BBEDDC4D25E78518001C6292 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BBEDDC4025E773F0001C6292 /* Assets.xcassets */,
+				BBEDDC3725E773EF001C6292 /* AppDelegate.swift */,
+				BBEDDC3925E773EF001C6292 /* SceneDelegate.swift */,
+				BBEDDC4525E773F0001C6292 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +157,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBEDDC3C25E773EF001C6292 /* ViewController.swift in Sources */,
+				BBEDDC5525E78596001C6292 /* PlayViewController.swift in Sources */,
+				BBEDDC5025E78585001C6292 /* IntroViewController.swift in Sources */,
 				BBEDDC3825E773EF001C6292 /* AppDelegate.swift in Sources */,
+				BBEDDC5925E785B5001C6292 /* ExplainViewController.swift in Sources */,
+				BBEDDC6025E785D2001C6292 /* GameOverViewController.swift in Sources */,
 				BBEDDC3A25E773EF001C6292 /* SceneDelegate.swift in Sources */,
+				BBEDDC5C25E785C2001C6292 /* PauseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
