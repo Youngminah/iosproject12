@@ -13,7 +13,7 @@
 -------------------------------------------------------
 <br></br>
 <br></br>
-### 🎼  2. Random Music 추천 앱 (직접 구현)
+### 🎼  2. Random Music 추천 앱 (직접 구)
 `LifeCycle`: iOS LifeCycle을 다룬 앱 
 
 → 화면이 바뀔 때 마다 랜덤으로 뮤직을 추천하고 , 생명주기에 따라서 뮤직이 멈추고, 이어지는 것들을 구현한 앱입니다.
@@ -28,7 +28,7 @@
 <br></br>
 
 
-### 📒  3.  연락처 앱 (직접 구현)
+### 📒  3.  연락처 앱 (직접 구상)
 `TableView`: iOS 테이블 뷰 연습 앱
 
 → 화해 어플의 대표 화면을 AutoLayout 만을 이용하여 Clone 코딩한 앱입니다.
@@ -45,7 +45,7 @@
 <br></br>
 <br></br>
 
-### 🐳  4. Under The Sea - Game 앱 (직접 구현)
+### 🐳  4. Under The Sea - Game 앱 (직접 구상)
 `MutitheradGame`: iOS Multithread GCD 
 
 → SprintKit을 사용하지 않고, 애니메이션과 Multithread GCD를 이용하여 구현한 게임 앱입니다.
