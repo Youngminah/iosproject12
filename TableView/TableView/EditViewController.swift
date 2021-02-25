@@ -75,7 +75,7 @@ class EditViewController: UIViewController {
             femalebutton.isSelected = false
             malebutton.isSelected = false
             unspecbutton.isSelected = true
-        }
+    
     }
     
     //전화번호에 "-" 삽입하기.
