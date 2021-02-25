@@ -11,6 +11,8 @@
 ### ▶︎ 실행화면
 <img src="https://github.com/Youngminah/largegif/blob/master/hwahae.gif" title="auto gif" width="30%"/>
 
+<br></br>
+
 -------------------------------------------------------
 <br></br>
 
