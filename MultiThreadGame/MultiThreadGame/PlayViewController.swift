@@ -39,12 +39,6 @@ class PlayViewController: UIViewController {
         }
     }
     
-//    var player: UIImageView = {
-//        let player = UIImageView(image: UIImage(named: "player"))
-//        player.frame = CGRect(x: 200, y: 400, width: 60, height: 40)
-//        return player
-//    }()
-//
     override func viewDidLoad() {
         super.viewDidLoad()
         do{
@@ -89,7 +83,7 @@ class PlayViewController: UIViewController {
             }
             RunLoop.current.run()
         }
-        // 먹이 생성.
+        // 문어 생성.
         DispatchQueue.global(qos: .background).async {
             self.octopusTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
                 DispatchQueue.main.sync {
@@ -190,8 +184,8 @@ class PlayViewController: UIViewController {
             DispatchQueue.main.async {
                 if self.predators.count > 0 {
                     for predator in self.predators {
-                        if let preyVal = predator.layer.presentation()?.frame {
-                            if preyVal.intersects(self.player.frame) {
+                        if let predatorVal = predator.layer.presentation()?.frame {
+                            if predatorVal.intersects(self.player.frame) {
                                 let index = self.predators.firstIndex(of: predator)
                                 self.predators.remove(at: index!)
                                 predator.removeFromSuperview()

@@ -38,6 +38,8 @@ class IntroViewController: UIViewController {
             }
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
+            startBool = false
+            startBoolImage.isHighlighted = false
         }
         else {
             startBool = true
@@ -54,6 +56,8 @@ class IntroViewController: UIViewController {
             }
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
+            explainBool = false
+            ExplainBoolImage.isHighlighted = false
         }
         else {
             explainBool = true

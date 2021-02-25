@@ -188,32 +188,6 @@
             </objects>
             <point key="canvasLocation" x="714.49275362318849" y="81.696428571428569"/>
         </scene>
-        <!--Pause View Controller-->
-        <scene sceneID="JAV-Z4-8et">
-            <objects>
-                <viewController storyboardIdentifier="PauseScene" id="fwJ-7d-d4H" customClass="PauseViewController" customModule="MultiThreadGame" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="XPZ-MH-OsM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Hbc-Kv-C4F">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="MeY-Nm-QmJ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Hbc-Kv-C4F" firstAttribute="trailing" secondItem="MeY-Nm-QmJ" secondAttribute="trailing" id="2gE-Fe-2v9"/>
-                            <constraint firstItem="Hbc-Kv-C4F" firstAttribute="leading" secondItem="MeY-Nm-QmJ" secondAttribute="leading" id="BMQ-Lh-nuW"/>
-                            <constraint firstAttribute="bottom" secondItem="Hbc-Kv-C4F" secondAttribute="bottom" id="N5e-wM-oyx"/>
-                            <constraint firstItem="Hbc-Kv-C4F" firstAttribute="top" secondItem="XPZ-MH-OsM" secondAttribute="top" id="n89-qR-44b"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aso-Ti-fz0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1414" y="82"/>
-        </scene>
         <!--Explain View Controller-->
         <scene sceneID="xiG-ku-VBA">
             <objects>
@@ -225,20 +199,97 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="5JM-WW-MYg">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xea-h5-raA">
+                                <rect key="frame" x="29" y="68" width="129" height="50"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                                <state key="normal" title="&lt;- Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonClicked:" destination="AhT-AC-5cQ" eventType="touchUpInside" id="lEp-Gw-sCh"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mmM-um-Xgm">
+                                <rect key="frame" x="57" y="222" width="300" height="300"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="SmG-gB-Equ">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="player" translatesAutoresizingMaskIntoConstraints="NO" id="fl6-Y8-zJl">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="7sY-st-Gqc"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Character! Click and move." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5If-l0-117">
+                                                <rect key="frame" x="72" y="0.0" width="228" height="100"/>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="aX7-RK-ETm">
+                                        <rect key="frame" x="0.0" y="100" width="300" height="100"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="prey" translatesAutoresizingMaskIntoConstraints="NO" id="mqZ-Dh-Yqs">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="XcE-bQ-Eoi"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can get score as you eat this." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8r-42-5WE">
+                                                <rect key="frame" x="72" y="0.0" width="228" height="100"/>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="O6o-bm-xTV">
+                                        <rect key="frame" x="0.0" y="200" width="300" height="100"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="octopus" translatesAutoresizingMaskIntoConstraints="NO" id="1Lm-fQ-UTx">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="S8m-Ck-3sC"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You need to avoid them." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNh-Fr-J5y">
+                                                <rect key="frame" x="72" y="0.0" width="228" height="100"/>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="BpF-Lz-AUE"/>
+                                    <constraint firstAttribute="width" secondItem="mmM-um-Xgm" secondAttribute="height" multiplier="1:1" id="DuQ-pt-kaT"/>
+                                    <constraint firstAttribute="width" constant="300" id="yNS-O1-VZb"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fLP-Hi-r38"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="fLP-Hi-r38" firstAttribute="trailing" secondItem="xea-h5-raA" secondAttribute="trailing" constant="256" id="1Wi-eH-5NU"/>
                             <constraint firstItem="5JM-WW-MYg" firstAttribute="top" secondItem="gxO-f0-VhI" secondAttribute="top" id="B6K-b9-T8B"/>
+                            <constraint firstItem="xea-h5-raA" firstAttribute="leading" secondItem="fLP-Hi-r38" secondAttribute="leading" constant="29" id="EQQ-pf-w69"/>
+                            <constraint firstItem="mmM-um-Xgm" firstAttribute="top" secondItem="fLP-Hi-r38" secondAttribute="top" constant="178" id="Orv-g7-U7T"/>
+                            <constraint firstItem="xea-h5-raA" firstAttribute="top" secondItem="fLP-Hi-r38" secondAttribute="top" constant="24" id="bsg-Kf-6I5"/>
                             <constraint firstItem="5JM-WW-MYg" firstAttribute="leading" secondItem="fLP-Hi-r38" secondAttribute="leading" id="iQ7-Ow-12t"/>
+                            <constraint firstItem="fLP-Hi-r38" firstAttribute="bottom" secondItem="mmM-um-Xgm" secondAttribute="bottom" constant="340" id="m4g-EN-N1S"/>
                             <constraint firstItem="5JM-WW-MYg" firstAttribute="trailing" secondItem="fLP-Hi-r38" secondAttribute="trailing" id="sre-FM-03B"/>
+                            <constraint firstItem="mmM-um-Xgm" firstAttribute="centerX" secondItem="fLP-Hi-r38" secondAttribute="centerX" id="u3P-eM-oMu"/>
                             <constraint firstAttribute="bottom" secondItem="5JM-WW-MYg" secondAttribute="bottom" id="xE3-wC-ynd"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0hu-c9-RWK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="29" y="739"/>
+            <point key="canvasLocation" x="28.985507246376812" y="738.61607142857144"/>
         </scene>
         <!--Game Over View Controller-->
         <scene sceneID="ZRe-b5-QXc">
@@ -332,7 +383,9 @@
     <resources>
         <image name="background" width="267" height="200"/>
         <image name="heart" width="287" height="282"/>
+        <image name="octopus" width="75" height="75"/>
         <image name="player" width="213" height="136"/>
+        <image name="prey" width="287" height="292"/>
         <image name="title" width="950" height="638"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
