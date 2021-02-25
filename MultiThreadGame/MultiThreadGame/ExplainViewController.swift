@@ -11,8 +11,6 @@ class ExplainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
     }
 
     @IBAction func backButtonClicked(_ sender: UIButton) {

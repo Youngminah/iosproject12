@@ -16,6 +16,7 @@ class PlayViewController: UIViewController {
     
     var preys: [UIImageView] = []
     var predators: [UIImageView] = []
+    var sharks: [UIImageView] = []
     
     var dragging: Bool = false
     var positionX: CGFloat!
@@ -23,6 +24,8 @@ class PlayViewController: UIViewController {
     
     var preyTimer: Timer!
     var octopusTimer: Timer!
+    var sharkTimer: Timer!
+    
     var checkPreyTimer: Timer!
     var checkPredatorTimer: Timer!
     var player: UIImageView!
@@ -70,11 +73,13 @@ class PlayViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        // 먹이 생성.
+
         if !audioPlayer.isPlaying{
             audioPlayer.currentTime = 0
             audioPlayer.play()
         }
+        
+        //먹이생성.
         DispatchQueue.global(qos: .background).async {
             self.preyTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { _ in
                 DispatchQueue.main.sync {
@@ -92,6 +97,17 @@ class PlayViewController: UIViewController {
             }
             RunLoop.current.run()
         }
+        
+        // 상어 생성.
+        DispatchQueue.global(qos: .background).async {
+            self.sharkTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { _ in
+                DispatchQueue.main.sync {
+                    self.createShark()
+                }
+            }
+            RunLoop.current.run()
+        }
+        
         // 먹이와 플레이어 충돌 타이머
         DispatchQueue.global().async {
             self.checkPreyTimer = Timer.scheduledTimer(withTimeInterval: 0.001, repeats: true) { _ in
@@ -101,7 +117,7 @@ class PlayViewController: UIViewController {
             }
             RunLoop.current.run()
         }
-        // 먹이와 플레이어 충돌 타이머
+        // 문어와 플레이어 충돌 타이머
         DispatchQueue.global().async {
             self.checkPredatorTimer = Timer.scheduledTimer(withTimeInterval: 0.001, repeats: true) { _ in
                 DispatchQueue.main.sync {
@@ -110,6 +126,59 @@ class PlayViewController: UIViewController {
             }
             RunLoop.current.run()
         }
+        
+        // 상어와 플레이어 충돌 타이머
+        DispatchQueue.global().async {
+            self.checkPredatorTimer = Timer.scheduledTimer(withTimeInterval: 0.001, repeats: true) { _ in
+                DispatchQueue.main.sync {
+                    self.checkSharkCollision()
+                }
+            }
+            RunLoop.current.run()
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first!
+        let touchPoint = touch.location(in: self.view)
+        if player.frame.contains(touchPoint){
+            dragging = true
+        }
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first!
+        let touchPoint = touch.location(in: self.view)
+        if (self.dragging) {
+            DispatchQueue.global().async { [unowned self] in
+                DispatchQueue.main.async {
+                    self.player.center = CGPoint(x: (touchPoint.x), y: (touchPoint.y))
+                    self.positionX = self.player.frame.origin.x + 19
+                    self.positionY = self.player.frame.origin.y - 10
+                }
+            }
+        }
+    }
+}
+
+extension PlayViewController{
+    
+    func presentGameOver(){
+        if let gameOverVC = self.storyboard?.instantiateViewController(identifier: "GameoverScene") as? GameOverViewController{
+            self.pause()
+            gameOverVC.scoreValue = self.score
+            gameOverVC.modalTransitionStyle = .coverVertical
+            gameOverVC.modalPresentationStyle = .fullScreen
+            self.present(gameOverVC, animated: true, completion: nil)
+            self.score = 0
+        }
+    }
+    
+    func pause() {
+        preyTimer.invalidate()
+        octopusTimer.invalidate()
+        checkPreyTimer.invalidate()
+        checkPredatorTimer.invalidate()
     }
     
     // 먹이 생성 함수
@@ -135,7 +204,7 @@ class PlayViewController: UIViewController {
         self.view.addSubview(prey)
     }
     
-    // 먹이 생성 함수
+    // 문어 생성 함수
     func createOctopus() {
         let octopus = UIImageView(image: UIImage(named: "octopus"))
         octopus.contentMode = .scaleAspectFill
@@ -157,6 +226,28 @@ class PlayViewController: UIViewController {
         self.view.addSubview(octopus)
     }
     
+    // 상어 생성 함수
+    func createShark() {
+        let shark = UIImageView(image: UIImage(named: "Shark"))
+        shark.contentMode = .scaleAspectFill
+        sharks.append(shark)
+        let minValue = self.view.frame.size.height / 100
+        let maxValue = self.view.frame.size.height - 20
+        let createPoint = UInt32(maxValue - minValue)
+        shark.frame = CGRect(x: 500, y: CGFloat(arc4random_uniform(createPoint)), width: 120, height: 120)
+        // 애니메이션
+        UIView.animate(withDuration: 9.0, delay: 0.0, options: .allowUserInteraction, animations: {
+            shark.frame = CGRect(x: -200, y: shark.frame.origin.y, width: 120, height: 120)
+        }, completion: { _ in
+            if self.sharks.contains(shark) {
+                let index = self.sharks.firstIndex(of: shark)
+                self.sharks.remove(at: index!)
+                shark.removeFromSuperview()
+            }
+        })
+        self.view.addSubview(shark)
+    }
+    
     // 먹이 & 플레이어 충돌 함수
     func checkPreyCollision() {
         DispatchQueue.global(qos: .userInitiated).async {
@@ -176,8 +267,6 @@ class PlayViewController: UIViewController {
             }
         }
     }
-    
-    
     // 문어 & 플레이어 충돌 함수
     func checkPredatorCollision() {
         DispatchQueue.global(qos: .userInitiated).async {
@@ -201,43 +290,23 @@ class PlayViewController: UIViewController {
         }
     }
     
-    func presentGameOver(){
-        if let gameOverVC = self.storyboard?.instantiateViewController(identifier: "GameoverScene") as? GameOverViewController{
-            self.pause()
-            gameOverVC.scoreValue = self.score
-            gameOverVC.modalTransitionStyle = .coverVertical
-            gameOverVC.modalPresentationStyle = .fullScreen
-            self.present(gameOverVC, animated: true, completion: nil)
-            self.score = 0
-        }
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch = touches.first!
-        let touchPoint = touch.location(in: self.view)
-        if player.frame.contains(touchPoint){
-            dragging = true
-        }
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch = touches.first!
-        let touchPoint = touch.location(in: self.view)
-        if (self.dragging) {
-            DispatchQueue.global().async { [unowned self] in
-                DispatchQueue.main.async {
-                    self.player.center = CGPoint(x: (touchPoint.x), y: (touchPoint.y))
-                    self.positionX = self.player.frame.origin.x + 19
-                    self.positionY = self.player.frame.origin.y - 10
+    // 상어 & 플레이어 충돌 함수
+    func checkSharkCollision() {
+        DispatchQueue.global(qos: .userInitiated).async {
+            DispatchQueue.main.async {
+                if self.sharks.count > 0 {
+                    for shark in self.sharks {
+                        if let sharkVal = shark.layer.presentation()?.frame {
+                            if sharkVal.intersects(self.player.frame) {
+                                let index = self.sharks.firstIndex(of: shark)
+                                self.sharks.remove(at: index!)
+                                shark.removeFromSuperview()
+                                self.presentGameOver()
+                            }
+                        }
+                    }
                 }
             }
         }
-    }
-    
-    func pause() {
-        preyTimer.invalidate()
-        octopusTimer.invalidate()
-        checkPreyTimer.invalidate()
-        checkPredatorTimer.invalidate()
     }
 }

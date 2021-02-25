@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "leftShark~universal@1x.png",
+      "filename" : "Shark.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "leftShark~universal@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "leftShark~universal@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

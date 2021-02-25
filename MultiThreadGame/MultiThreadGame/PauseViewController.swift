@@ -8,14 +8,7 @@
 import UIKit
 
 class PauseViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
     }
-    
-
-
-
 }
