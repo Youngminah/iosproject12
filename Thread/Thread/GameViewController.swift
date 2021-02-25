@@ -56,12 +56,16 @@ class GameViewController: UIViewController {
     }
     
     @objc func boxClicked(_ sender: UITapGestureRecognizer){
+        
         let selectedBox = getBox(from: sender.name ?? "")
+        
         makeChoice(selectedBox)
         playerChoices.append(Box(rawValue: sender.name!)!)
         checkIfWon()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75){
-            self.computerPlay()
+        DispatchQueue.global().async { [unowned self] in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.75){
+                self.computerPlay()
+            }
         }
     }
     
