@@ -17,6 +17,7 @@
 		BBEDDC5925E785B5001C6292 /* ExplainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDDC5825E785B5001C6292 /* ExplainViewController.swift */; };
 		BBEDDC5C25E785C2001C6292 /* PauseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDDC5B25E785C2001C6292 /* PauseViewController.swift */; };
 		BBEDDC6025E785D2001C6292 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEDDC5F25E785D2001C6292 /* GameOverViewController.swift */; };
+		BBEDDC6F25E7DFCB001C6292 /* underthesea.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BBEDDC6E25E7DFCB001C6292 /* underthesea.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		BBEDDC5825E785B5001C6292 /* ExplainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainViewController.swift; sourceTree = "<group>"; };
 		BBEDDC5B25E785C2001C6292 /* PauseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseViewController.swift; sourceTree = "<group>"; };
 		BBEDDC5F25E785D2001C6292 /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
+		BBEDDC6E25E7DFCB001C6292 /* underthesea.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = underthesea.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				BBEDDC5F25E785D2001C6292 /* GameOverViewController.swift */,
 				BBEDDC3D25E773EF001C6292 /* Main.storyboard */,
 				BBEDDC4225E773F0001C6292 /* LaunchScreen.storyboard */,
+				BBEDDC6425E7DAF0001C6292 /* Music */,
 				BBEDDC4D25E78518001C6292 /* Supporting Files */,
 			);
 			path = MultiThreadGame;
@@ -85,6 +88,14 @@
 				BBEDDC4525E773F0001C6292 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BBEDDC6425E7DAF0001C6292 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				BBEDDC6E25E7DFCB001C6292 /* underthesea.mp3 */,
+			);
+			name = Music;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBEDDC4425E773F0001C6292 /* LaunchScreen.storyboard in Resources */,
+				BBEDDC6F25E7DFCB001C6292 /* underthesea.mp3 in Resources */,
 				BBEDDC4125E773F0001C6292 /* Assets.xcassets in Resources */,
 				BBEDDC3F25E773EF001C6292 /* Main.storyboard in Resources */,
 			);

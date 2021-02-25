@@ -38,7 +38,7 @@ class ViewController: UIViewController {
         let item = randomTrack[0]
         receiveViewController.simplePlayer.replaceCurrentItem(with: item)
         
-        //self.present(receiveViewController, animated: true, completion: nil)
+        //
         self.navigationController?.pushViewController(receiveViewController, animated: true)
     }
     

@@ -11,7 +11,7 @@
         <!--Intro View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="IntroViewController" customModule="MultiThreadGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IntroScene" id="BYZ-38-t0r" customClass="IntroViewController" customModule="MultiThreadGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,8 +19,14 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="lgJ-IT-TvA">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="hG9-Bs-ei1">
+                                <rect key="frame" x="48" y="70" width="318" height="314"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hG9-Bs-ei1" secondAttribute="height" multiplier="159:157" id="0Zz-Mw-nWC"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGT-Zx-SWV">
-                                <rect key="frame" x="80.5" y="386" width="253" height="55"/>
+                                <rect key="frame" x="80.5" y="399" width="253" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="aGT-Zx-SWV" secondAttribute="height" multiplier="23:5" id="6i5-GL-dhI"/>
                                     <constraint firstAttribute="width" constant="253" id="wQT-3G-Leb"/>
@@ -33,6 +39,12 @@
                                     <action selector="startButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tyc-8X-pSr"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" highlightedImage="heart" translatesAutoresizingMaskIntoConstraints="NO" id="nrd-lV-T1G">
+                                <rect key="frame" x="116" y="405.5" width="42" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nrd-lV-T1G" secondAttribute="height" multiplier="1:1" id="AiD-FI-gwi"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVe-z2-2bX">
                                 <rect key="frame" x="80.5" y="491" width="253" height="55"/>
                                 <constraints>
@@ -47,45 +59,46 @@
                                     <action selector="explainButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d7S-Cz-9NU"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Under The Sea" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1p-zf-Bw9">
-                                <rect key="frame" x="45" y="144" width="324" height="51"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" highlightedImage="heart" translatesAutoresizingMaskIntoConstraints="NO" id="fM3-oo-IYi">
+                                <rect key="frame" x="116" y="497.5" width="42" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="p1p-zf-Bw9" secondAttribute="height" multiplier="108:17" id="Rua-Ph-plg"/>
+                                    <constraint firstAttribute="width" secondItem="fM3-oo-IYi" secondAttribute="height" multiplier="1:1" id="sRk-9C-naZ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="40"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="player" translatesAutoresizingMaskIntoConstraints="NO" id="kY0-ye-Xum">
-                                <rect key="frame" x="78" y="576" width="93" height="102"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="nrd-lV-T1G">
-                                <rect key="frame" x="106" y="391" width="56" height="50"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="player" translatesAutoresizingMaskIntoConstraints="NO" id="kY0-ye-Xum">
+                                <rect key="frame" x="224" y="637" width="58" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="p1p-zf-Bw9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="BLn-Rs-IG5"/>
-                            <constraint firstItem="pVe-z2-2bX" firstAttribute="top" secondItem="aGT-Zx-SWV" secondAttribute="bottom" constant="50" id="DrB-yu-hF1"/>
-                            <constraint firstItem="p1p-zf-Bw9" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="EEe-oM-qGa"/>
+                            <constraint firstItem="aGT-Zx-SWV" firstAttribute="leading" secondItem="nrd-lV-T1G" secondAttribute="trailing" constant="-77.5" id="01o-If-00k"/>
+                            <constraint firstItem="hG9-Bs-ei1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="26" id="54w-Tn-M22"/>
+                            <constraint firstItem="nrd-lV-T1G" firstAttribute="centerY" secondItem="aGT-Zx-SWV" secondAttribute="centerY" id="70f-fg-I9z"/>
+                            <constraint firstItem="aGT-Zx-SWV" firstAttribute="top" secondItem="hG9-Bs-ei1" secondAttribute="bottom" constant="15" id="8Qx-9G-O0o"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pVe-z2-2bX" secondAttribute="bottom" constant="316" id="9Z4-jV-XnM"/>
                             <constraint firstAttribute="bottom" secondItem="lgJ-IT-TvA" secondAttribute="bottom" id="Iks-CI-gF6"/>
+                            <constraint firstItem="hG9-Bs-ei1" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="L8O-Zb-hy7"/>
                             <constraint firstItem="lgJ-IT-TvA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QJC-jK-5CR"/>
-                            <constraint firstItem="pVe-z2-2bX" firstAttribute="centerX" secondItem="p1p-zf-Bw9" secondAttribute="centerX" id="TQl-Tq-gfb"/>
-                            <constraint firstItem="aGT-Zx-SWV" firstAttribute="top" secondItem="p1p-zf-Bw9" secondAttribute="bottom" constant="191" id="ToU-hJ-DaE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="p1p-zf-Bw9" secondAttribute="bottom" constant="667" id="VTk-Hr-Weg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aGT-Zx-SWV" secondAttribute="bottom" constant="421" id="Xar-rE-HpU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hG9-Bs-ei1" secondAttribute="bottom" constant="478" id="XN8-Nz-0If"/>
+                            <constraint firstItem="pVe-z2-2bX" firstAttribute="top" secondItem="aGT-Zx-SWV" secondAttribute="bottom" constant="37" id="aHK-o1-tEt"/>
+                            <constraint firstItem="fM3-oo-IYi" firstAttribute="centerX" secondItem="nrd-lV-T1G" secondAttribute="centerX" id="aYj-FI-nNJ"/>
+                            <constraint firstItem="nrd-lV-T1G" firstAttribute="height" secondItem="aGT-Zx-SWV" secondAttribute="height" multiplier="0.763636" id="b2I-wV-96t"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aGT-Zx-SWV" secondAttribute="bottom" constant="408" id="bdQ-er-kdH"/>
                             <constraint firstItem="aGT-Zx-SWV" firstAttribute="centerX" secondItem="pVe-z2-2bX" secondAttribute="centerX" id="fIn-iN-mxQ"/>
+                            <constraint firstItem="fM3-oo-IYi" firstAttribute="height" secondItem="pVe-z2-2bX" secondAttribute="height" multiplier="0.763636" id="fhO-he-csa"/>
+                            <constraint firstItem="aGT-Zx-SWV" firstAttribute="centerX" secondItem="hG9-Bs-ei1" secondAttribute="centerX" id="j4E-uZ-BOM"/>
+                            <constraint firstItem="fM3-oo-IYi" firstAttribute="centerY" secondItem="pVe-z2-2bX" secondAttribute="centerY" id="lm8-6i-sLm"/>
                             <constraint firstItem="lgJ-IT-TvA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sD8-YI-vsH"/>
-                            <constraint firstItem="p1p-zf-Bw9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="vgW-OX-hZM"/>
                             <constraint firstItem="lgJ-IT-TvA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="z2Q-xI-JX2"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ExplainBoolImage" destination="fM3-oo-IYi" id="C0H-iB-hGL"/>
                         <outlet property="explainButton" destination="pVe-z2-2bX" id="MG7-8U-Lza"/>
                         <outlet property="imageView" destination="nrd-lV-T1G" id="FPB-UQ-5tT"/>
+                        <outlet property="startBoolImage" destination="nrd-lV-T1G" id="Czd-Nv-dE3"/>
                         <outlet property="startButton" destination="aGT-Zx-SWV" id="hc1-y5-3RK"/>
                     </connections>
                 </viewController>
@@ -96,7 +109,7 @@
         <!--Play View Controller-->
         <scene sceneID="KeD-g9-MI0">
             <objects>
-                <viewController id="2Zp-Ps-V0e" customClass="PlayViewController" customModule="MultiThreadGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlayScene" id="2Zp-Ps-V0e" customClass="PlayViewController" customModule="MultiThreadGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LDH-cA-l4i">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -110,38 +123,38 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Gs0-FG-hHx">
                                         <rect key="frame" x="0.0" y="0.0" width="72.5" height="84.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uS-dP-aDE">
-                                                <rect key="frame" x="0.0" y="0.0" width="72.5" height="42"/>
-                                                <fontDescription key="fontDescription" name="MuktaMahee-Bold" family="Mukta Mahee" pointSize="25"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="A23-In-01h">
-                                                <rect key="frame" x="0.0" y="42" width="72.5" height="42.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="72.5" height="42"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="50" verticalCompressionResistancePriority="50" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="a4b-gS-dhy">
-                                                        <rect key="frame" x="0.0" y="0.0" width="33.5" height="42.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="33.5" height="42"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rz6-cx-jgn">
-                                                        <rect key="frame" x="39.5" y="0.0" width="33" height="42.5"/>
+                                                        <rect key="frame" x="39.5" y="0.0" width="33" height="42"/>
                                                         <fontDescription key="fontDescription" name="MuktaMahee-Bold" family="Mukta Mahee" pointSize="25"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uS-dP-aDE">
+                                                <rect key="frame" x="0.0" y="42" width="72.5" height="42.5"/>
+                                                <fontDescription key="fontDescription" name="MuktaMahee-Bold" family="Mukta Mahee" pointSize="25"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="F4P-uK-npl">
                                         <rect key="frame" x="86.5" y="0.0" width="14" height="84.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTK-Lm-e6t">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hK-7R-t3W">
                                                 <rect key="frame" x="0.0" y="0.0" width="14" height="42"/>
                                                 <fontDescription key="fontDescription" name="MuktaMahee-Bold" family="Mukta Mahee" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hK-7R-t3W">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTK-Lm-e6t">
                                                 <rect key="frame" x="0.0" y="42" width="14" height="42.5"/>
                                                 <fontDescription key="fontDescription" name="MuktaMahee-Bold" family="Mukta Mahee" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -166,6 +179,10 @@
                             <constraint firstItem="O60-9Y-PBG" firstAttribute="leading" secondItem="YHR-We-Tst" secondAttribute="leading" id="x5L-7g-s4j"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="heartLabel" destination="8hK-7R-t3W" id="SOE-qf-I6O"/>
+                        <outlet property="scoreLabel" destination="oTK-Lm-e6t" id="xQ9-xf-NOs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7yz-s4-csY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -174,7 +191,7 @@
         <!--Pause View Controller-->
         <scene sceneID="JAV-Z4-8et">
             <objects>
-                <viewController id="fwJ-7d-d4H" customClass="PauseViewController" customModule="MultiThreadGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PauseScene" id="fwJ-7d-d4H" customClass="PauseViewController" customModule="MultiThreadGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XPZ-MH-OsM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -200,7 +217,7 @@
         <!--Explain View Controller-->
         <scene sceneID="xiG-ku-VBA">
             <objects>
-                <viewController id="AhT-AC-5cQ" customClass="ExplainViewController" customModule="MultiThreadGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExplainScene" id="AhT-AC-5cQ" customClass="ExplainViewController" customModule="MultiThreadGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gxO-f0-VhI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -226,7 +243,7 @@
         <!--Game Over View Controller-->
         <scene sceneID="ZRe-b5-QXc">
             <objects>
-                <viewController id="JUJ-SX-VBA" customClass="GameOverViewController" customModule="MultiThreadGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameoverScene" id="JUJ-SX-VBA" customClass="GameOverViewController" customModule="MultiThreadGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uFx-xp-er4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -266,6 +283,9 @@
                                         <state key="normal" title="Again">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="againButtonClicked:" destination="JUJ-SX-VBA" eventType="touchUpInside" id="HPC-vc-obN"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KdP-NN-BDE">
                                         <rect key="frame" x="121" y="0.0" width="81" height="44"/>
@@ -273,6 +293,9 @@
                                         <state key="normal" title="Exit">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="exitButtonClicked:" destination="JUJ-SX-VBA" eventType="touchUpInside" id="nUn-cg-gBz"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -297,6 +320,9 @@
                             <constraint firstAttribute="bottom" secondItem="IHw-bx-H2V" secondAttribute="bottom" id="rRt-NF-8W3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="totalScore" destination="xSD-76-xML" id="DeU-sX-abd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uav-QS-iO1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -306,7 +332,8 @@
     <resources>
         <image name="background" width="267" height="200"/>
         <image name="heart" width="287" height="282"/>
-        <image name="player" width="120" height="120"/>
+        <image name="player" width="213" height="136"/>
+        <image name="title" width="950" height="638"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
