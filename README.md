@@ -13,12 +13,14 @@
 -------------------------------------------------------
 <br></br>
 <br></br>
-### 🎼  2. Random Music 추천 앱 (직접 구)
+### 🎼  2. Random Music 추천 앱 (직접 구상)
 `LifeCycle`: iOS LifeCycle을 다룬 앱 
 
 → 화면이 바뀔 때 마다 랜덤으로 뮤직을 추천하고 , 생명주기에 따라서 뮤직이 멈추고, 이어지는 것들을 구현한 앱입니다.
 
 → LifeCycle의 모든 함수를 최대한 활용하기 위하여, 좋아요 추가, 랜덥으로 3가지 곡 생성. 알림창 띄우기. 플레이 조작하기. 등을 하였습니다.
+
+→ 다크모드에도 적용 가능하게 구현 하였습니다.
 
 ### ▶︎ 실행화면
 <img src="https://github.com/Youngminah/largegif/blob/master/randomMusic.gif" title="music gif" width="30%"/>
@@ -35,7 +37,7 @@
 
 → CRUD의 Create(생성), Read(읽기), Update(갱신), Delete(삭제)에 해당하는 내용을 모두 구현하였습니다.
 
-→ 직접 구현한 앱.
+→ Codable을 이용하여 Json 파일로 저장하여 연락처가 저장되게 하였습니다.
 
 
 ### ▶︎ 실행화면
