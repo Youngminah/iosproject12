@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import AVFoundation
 
 class IntroViewController: UIViewController {
     
-    
+    var audioPlayer = AVAudioPlayer()
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var explainButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
@@ -22,10 +23,21 @@ class IntroViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "underthesea", ofType: "mp3") ?? ""))
+            audioPlayer.prepareToPlay()
+        }
+        catch{
+            print(error)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if !audioPlayer.isPlaying{
+            audioPlayer.currentTime = 0
+            audioPlayer.play()
+        }
         startBool = true
         startBoolImage.isHighlighted = true
     }

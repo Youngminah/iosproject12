@@ -31,7 +31,7 @@
                                     <constraint firstAttribute="width" secondItem="aGT-Zx-SWV" secondAttribute="height" multiplier="23:5" id="6i5-GL-dhI"/>
                                     <constraint firstAttribute="width" constant="253" id="wQT-3G-Leb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
                                 <state key="normal" title="Start">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -39,19 +39,13 @@
                                     <action selector="startButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tyc-8X-pSr"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" highlightedImage="heart" translatesAutoresizingMaskIntoConstraints="NO" id="nrd-lV-T1G">
-                                <rect key="frame" x="116" y="405.5" width="42" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="nrd-lV-T1G" secondAttribute="height" multiplier="1:1" id="AiD-FI-gwi"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVe-z2-2bX">
                                 <rect key="frame" x="80.5" y="491" width="253" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="pVe-z2-2bX" secondAttribute="height" multiplier="23:5" id="BuX-0w-J6m"/>
                                     <constraint firstAttribute="width" constant="253" id="Kbd-dA-FQb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
                                 <state key="normal" title="Explain">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -59,45 +53,65 @@
                                     <action selector="explainButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d7S-Cz-9NU"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="player" translatesAutoresizingMaskIntoConstraints="NO" id="kY0-ye-Xum">
+                                <rect key="frame" x="305" y="113" width="52" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kY0-ye-Xum" secondAttribute="height" multiplier="26:17" id="Xau-e5-pX4"/>
+                                </constraints>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" highlightedImage="heart" translatesAutoresizingMaskIntoConstraints="NO" id="fM3-oo-IYi">
-                                <rect key="frame" x="116" y="497.5" width="42" height="42"/>
+                                <rect key="frame" x="101" y="497" width="42" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fM3-oo-IYi" secondAttribute="height" multiplier="1:1" id="sRk-9C-naZ"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="player" translatesAutoresizingMaskIntoConstraints="NO" id="kY0-ye-Xum">
-                                <rect key="frame" x="224" y="637" width="58" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Shark" translatesAutoresizingMaskIntoConstraints="NO" id="cXt-zd-WYf">
+                                <rect key="frame" x="276" y="418" width="246" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cXt-zd-WYf" secondAttribute="height" multiplier="123:64" id="38Q-h1-K10"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" highlightedImage="heart" translatesAutoresizingMaskIntoConstraints="NO" id="nrd-lV-T1G">
+                                <rect key="frame" x="101" y="405" width="42" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nrd-lV-T1G" secondAttribute="height" multiplier="1:1" id="AiD-FI-gwi"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="aGT-Zx-SWV" firstAttribute="leading" secondItem="nrd-lV-T1G" secondAttribute="trailing" constant="-77.5" id="01o-If-00k"/>
                             <constraint firstItem="hG9-Bs-ei1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="26" id="54w-Tn-M22"/>
                             <constraint firstItem="nrd-lV-T1G" firstAttribute="centerY" secondItem="aGT-Zx-SWV" secondAttribute="centerY" id="70f-fg-I9z"/>
                             <constraint firstItem="aGT-Zx-SWV" firstAttribute="top" secondItem="hG9-Bs-ei1" secondAttribute="bottom" constant="15" id="8Qx-9G-O0o"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pVe-z2-2bX" secondAttribute="bottom" constant="316" id="9Z4-jV-XnM"/>
                             <constraint firstAttribute="bottom" secondItem="lgJ-IT-TvA" secondAttribute="bottom" id="Iks-CI-gF6"/>
                             <constraint firstItem="hG9-Bs-ei1" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="L8O-Zb-hy7"/>
+                            <constraint firstItem="cXt-zd-WYf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="276" id="Nvl-05-Dhw"/>
                             <constraint firstItem="lgJ-IT-TvA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QJC-jK-5CR"/>
+                            <constraint firstItem="aGT-Zx-SWV" firstAttribute="leading" secondItem="nrd-lV-T1G" secondAttribute="trailing" constant="-62.5" id="TxS-wW-zAA"/>
+                            <constraint firstItem="cXt-zd-WYf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="374" id="Vhi-4Y-mG3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hG9-Bs-ei1" secondAttribute="bottom" constant="478" id="XN8-Nz-0If"/>
                             <constraint firstItem="pVe-z2-2bX" firstAttribute="top" secondItem="aGT-Zx-SWV" secondAttribute="bottom" constant="37" id="aHK-o1-tEt"/>
+                            <constraint firstItem="kY0-ye-Xum" firstAttribute="leading" secondItem="hG9-Bs-ei1" secondAttribute="trailing" constant="-61" id="aMQ-Nq-OkF"/>
                             <constraint firstItem="fM3-oo-IYi" firstAttribute="centerX" secondItem="nrd-lV-T1G" secondAttribute="centerX" id="aYj-FI-nNJ"/>
                             <constraint firstItem="nrd-lV-T1G" firstAttribute="height" secondItem="aGT-Zx-SWV" secondAttribute="height" multiplier="0.763636" id="b2I-wV-96t"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aGT-Zx-SWV" secondAttribute="bottom" constant="408" id="bdQ-er-kdH"/>
                             <constraint firstItem="aGT-Zx-SWV" firstAttribute="centerX" secondItem="pVe-z2-2bX" secondAttribute="centerX" id="fIn-iN-mxQ"/>
                             <constraint firstItem="fM3-oo-IYi" firstAttribute="height" secondItem="pVe-z2-2bX" secondAttribute="height" multiplier="0.763636" id="fhO-he-csa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cXt-zd-WYf" secondAttribute="bottom" constant="316" id="hKZ-8e-Cfv"/>
                             <constraint firstItem="aGT-Zx-SWV" firstAttribute="centerX" secondItem="hG9-Bs-ei1" secondAttribute="centerX" id="j4E-uZ-BOM"/>
                             <constraint firstItem="fM3-oo-IYi" firstAttribute="centerY" secondItem="pVe-z2-2bX" secondAttribute="centerY" id="lm8-6i-sLm"/>
+                            <constraint firstItem="hG9-Bs-ei1" firstAttribute="top" secondItem="kY0-ye-Xum" secondAttribute="bottom" constant="-77" id="mzQ-67-ZeS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kY0-ye-Xum" secondAttribute="trailing" constant="57" id="p5v-RB-kaI"/>
                             <constraint firstItem="lgJ-IT-TvA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sD8-YI-vsH"/>
+                            <constraint firstItem="cXt-zd-WYf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="108" id="u6a-WM-wcD"/>
                             <constraint firstItem="lgJ-IT-TvA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="z2Q-xI-JX2"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="ExplainBoolImage" destination="fM3-oo-IYi" id="C0H-iB-hGL"/>
                         <outlet property="explainButton" destination="pVe-z2-2bX" id="MG7-8U-Lza"/>
-                        <outlet property="imageView" destination="nrd-lV-T1G" id="FPB-UQ-5tT"/>
                         <outlet property="startBoolImage" destination="nrd-lV-T1G" id="Czd-Nv-dE3"/>
                         <outlet property="startButton" destination="aGT-Zx-SWV" id="hc1-y5-3RK"/>
                     </connections>
@@ -432,7 +446,7 @@
         <image name="heart" width="287" height="282"/>
         <image name="octopus" width="75" height="75"/>
         <image name="player" width="213" height="136"/>
-        <image name="prey" width="287" height="292"/>
+        <image name="prey" width="282" height="204"/>
         <image name="title" width="950" height="638"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

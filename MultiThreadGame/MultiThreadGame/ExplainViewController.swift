@@ -8,7 +8,6 @@
 import UIKit
 
 class ExplainViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -16,5 +15,4 @@ class ExplainViewController: UIViewController {
     @IBAction func backButtonClicked(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
-    
 }

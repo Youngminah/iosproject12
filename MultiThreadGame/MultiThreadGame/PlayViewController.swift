@@ -6,11 +6,9 @@
 //
 
 import UIKit
-import AVFoundation
 
 class PlayViewController: UIViewController {
 
-    var audioPlayer = AVAudioPlayer()
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var heartLabel: UILabel!
     
@@ -44,13 +42,6 @@ class PlayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        do{
-            audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "underthesea", ofType: "mp3") ?? ""))
-            audioPlayer.prepareToPlay()
-        }
-        catch{
-            print(error)
-        }
         player = UIImageView(image: UIImage(named: "player"))
         player.frame = CGRect(x: 200, y: 400, width: 60, height: 40)
         self.view.addSubview(player)
@@ -68,16 +59,11 @@ class PlayViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        audioPlayer.stop()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        if !audioPlayer.isPlaying{
-            audioPlayer.currentTime = 0
-            audioPlayer.play()
-        }
         
         //먹이생성.
         DispatchQueue.global(qos: .background).async {
