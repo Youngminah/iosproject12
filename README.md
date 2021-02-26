@@ -4,7 +4,7 @@
 ### 📍  1.  화해 AutoLayout Clone 앱 (화해 어플 클론 코딩)
 [폴더바로가기](https://github.com/Youngminah/iosproject12/tree/master/FirstApp)
 
-`FirstApp`: iOS AutoLayout 
+**`FirstApp`: iOS AutoLayout**
 
 → 화해 어플의 대표 화면을 AutoLayout 만을 이용하여 Clone 코딩한 앱.
 
@@ -28,7 +28,7 @@
 
 [폴더바로가기](https://github.com/Youngminah/iosproject12/tree/master/LifeCycle)
 
-`LifeCycle`: iOS LifeCycle을 다룬 앱 
+**`LifeCycle`: iOS LifeCycle을 다룬 앱** 
 
 → 화면이 바뀔 때 마다 랜덤으로 뮤직을 추천하고 , 생명주기에 따라서 뮤직이 멈추고, 이어지는 것들을 구현한 앱.
 
@@ -62,7 +62,7 @@
 ### 📒  3.  연락처 앱 (직접 구상)
 [폴더바로가기](https://github.com/Youngminah/iosproject12/tree/master/TableView)
 
-`TableView`: iOS 테이블 뷰 연습 앱
+**`TableView`: iOS 테이블 뷰 연습 앱**
 
 → 테이블 뷰를 만들기 위한 필수 프로토콜과 그 밖의 다양한 프로토콜을 사용하여 연락처를 저장하는 앱 구현.
 
@@ -91,7 +91,7 @@
 ### 🐳  4. Under The Sea - Game 앱 (직접 구상)
 [폴더바로가기](https://github.com/Youngminah/iosproject12/tree/master/MultiThreadGame)
 
-`MutitheradGame`: iOS Multithread GCD 
+**`MutitheradGame`: iOS Multithread GCD** 
 
 → `SpriteKit`을 사용하지 않고, 애니메이션과 `Multithread GCD`를 이용하여 구현한 게임 앱.
 
