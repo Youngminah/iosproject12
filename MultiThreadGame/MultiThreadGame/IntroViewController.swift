@@ -34,10 +34,8 @@ class IntroViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if !audioPlayer.isPlaying{
-            audioPlayer.currentTime = 0
-            audioPlayer.play()
-        }
+        audioPlayer.currentTime = 0
+        audioPlayer.play()
         startBool = true
         startBoolImage.isHighlighted = true
     }
