@@ -1,7 +1,7 @@
 
 # 미리보기 목차
 <br></br>
-### 📍  1.  화해 AutoLayout Clone 앱 (화해 어플 클론 코딩)
+## 📍  1.  화해 AutoLayout Clone 앱 (화해 어플 클론 코딩)
 [폴더바로가기](https://github.com/Youngminah/iosproject12/tree/master/FirstApp)
 
 **`FirstApp`: iOS AutoLayout**
@@ -24,7 +24,7 @@
 -------------------------------------------------------
 <br></br>
 
-### 🎼  2. Random Music 추천 앱 (직접 구상)
+## 🎼  2. Random Music 추천 앱 (직접 구상)
 
 [폴더바로가기](https://github.com/Youngminah/iosproject12/tree/master/LifeCycle)
 
@@ -76,7 +76,7 @@
 <br></br>
 
 
-### 📒  3.  연락처 앱 (직접 구상)
+## 📒  3.  연락처 앱 (직접 구상)
 [폴더바로가기](https://github.com/Youngminah/iosproject12/tree/master/TableView)
 
 **`TableView`: iOS 테이블 뷰 연습 앱**
@@ -130,7 +130,7 @@
 -------------------------------------------------------
 <br></br>
 
-### 🐳  4. Under The Sea - Game 앱 (직접 구상)
+## 🐳  4. Under The Sea - Game 앱 (직접 구상)
 [폴더바로가기](https://github.com/Youngminah/iosproject12/tree/master/MultiThreadGame)
 
 **`MutitheradGame`: iOS Multithread GCD** 
