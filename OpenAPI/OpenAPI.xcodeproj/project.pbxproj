@@ -7,85 +7,103 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BBF5DAE125EE20B200C1525D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5DAE025EE20B200C1525D /* AppDelegate.swift */; };
-		BBF5DAE325EE20B200C1525D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5DAE225EE20B200C1525D /* SceneDelegate.swift */; };
-		BBF5DAE525EE20B200C1525D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5DAE425EE20B200C1525D /* ViewController.swift */; };
-		BBF5DAE825EE20B200C1525D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBF5DAE625EE20B200C1525D /* Main.storyboard */; };
-		BBF5DAEA25EE20B300C1525D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBF5DAE925EE20B300C1525D /* Assets.xcassets */; };
-		BBF5DAED25EE20B300C1525D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBF5DAEB25EE20B300C1525D /* LaunchScreen.storyboard */; };
+		BB96F15425EE7A4C00DBC364 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB96F15325EE7A4C00DBC364 /* AppDelegate.swift */; };
+		BB96F15625EE7A4C00DBC364 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB96F15525EE7A4C00DBC364 /* SceneDelegate.swift */; };
+		BB96F15825EE7A4C00DBC364 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB96F15725EE7A4C00DBC364 /* ViewController.swift */; };
+		BB96F15B25EE7A4C00DBC364 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB96F15925EE7A4C00DBC364 /* Main.storyboard */; };
+		BB96F15D25EE7A4C00DBC364 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB96F15C25EE7A4C00DBC364 /* Assets.xcassets */; };
+		BB96F16025EE7A4C00DBC364 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB96F15E25EE7A4C00DBC364 /* LaunchScreen.storyboard */; };
+		F5E98BB077B1338A0B837A47 /* libPods-OpenAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D5C5FD17B520EBAEB5AD1C /* libPods-OpenAPI.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BBF5DADD25EE20B200C1525D /* OpenAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BBF5DAE025EE20B200C1525D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BBF5DAE225EE20B200C1525D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BBF5DAE425EE20B200C1525D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BBF5DAE725EE20B200C1525D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BBF5DAE925EE20B300C1525D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BBF5DAEC25EE20B300C1525D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		BBF5DAEE25EE20B300C1525D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C5D2C9701A6883BDD8F61D2 /* Pods-OpenAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenAPI.debug.xcconfig"; path = "Target Support Files/Pods-OpenAPI/Pods-OpenAPI.debug.xcconfig"; sourceTree = "<group>"; };
+		28D5C5FD17B520EBAEB5AD1C /* libPods-OpenAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OpenAPI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FD9372E28006270E66E9AA5 /* Pods-OpenAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenAPI.release.xcconfig"; path = "Target Support Files/Pods-OpenAPI/Pods-OpenAPI.release.xcconfig"; sourceTree = "<group>"; };
+		BB96F15025EE7A4C00DBC364 /* OpenAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB96F15325EE7A4C00DBC364 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BB96F15525EE7A4C00DBC364 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BB96F15725EE7A4C00DBC364 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BB96F15A25EE7A4C00DBC364 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BB96F15C25EE7A4C00DBC364 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BB96F15F25EE7A4C00DBC364 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BB96F16125EE7A4C00DBC364 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BBF5DADA25EE20B200C1525D /* Frameworks */ = {
+		BB96F14D25EE7A4C00DBC364 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5E98BB077B1338A0B837A47 /* libPods-OpenAPI.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BBF5DAD425EE20B200C1525D = {
+		2016A9C0F115B23AAA583502 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BBF5DADF25EE20B200C1525D /* OpenAPI */,
-				BBF5DADE25EE20B200C1525D /* Products */,
+				0C5D2C9701A6883BDD8F61D2 /* Pods-OpenAPI.debug.xcconfig */,
+				4FD9372E28006270E66E9AA5 /* Pods-OpenAPI.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BB96F14725EE7A4C00DBC364 = {
+			isa = PBXGroup;
+			children = (
+				BB96F15225EE7A4C00DBC364 /* OpenAPI */,
+				BB96F15125EE7A4C00DBC364 /* Products */,
+				2016A9C0F115B23AAA583502 /* Pods */,
+				C4FE3AC158D68BDEFA4715BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		BBF5DADE25EE20B200C1525D /* Products */ = {
+		BB96F15125EE7A4C00DBC364 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BBF5DADD25EE20B200C1525D /* OpenAPI.app */,
+				BB96F15025EE7A4C00DBC364 /* OpenAPI.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BBF5DADF25EE20B200C1525D /* OpenAPI */ = {
+		BB96F15225EE7A4C00DBC364 /* OpenAPI */ = {
 			isa = PBXGroup;
 			children = (
-				BBF5DAE425EE20B200C1525D /* ViewController.swift */,
-				BBF5DAE625EE20B200C1525D /* Main.storyboard */,
-				BBF5DAF525EE255B00C1525D /* Supporting Files */,
+				BB96F15325EE7A4C00DBC364 /* AppDelegate.swift */,
+				BB96F15525EE7A4C00DBC364 /* SceneDelegate.swift */,
+				BB96F15725EE7A4C00DBC364 /* ViewController.swift */,
+				BB96F15925EE7A4C00DBC364 /* Main.storyboard */,
+				BB96F15C25EE7A4C00DBC364 /* Assets.xcassets */,
+				BB96F15E25EE7A4C00DBC364 /* LaunchScreen.storyboard */,
+				BB96F16125EE7A4C00DBC364 /* Info.plist */,
 			);
 			path = OpenAPI;
 			sourceTree = "<group>";
 		};
-		BBF5DAF525EE255B00C1525D /* Supporting Files */ = {
+		C4FE3AC158D68BDEFA4715BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BBF5DAE025EE20B200C1525D /* AppDelegate.swift */,
-				BBF5DAE225EE20B200C1525D /* SceneDelegate.swift */,
-				BBF5DAEE25EE20B300C1525D /* Info.plist */,
-				BBF5DAEB25EE20B300C1525D /* LaunchScreen.storyboard */,
-				BBF5DAE925EE20B300C1525D /* Assets.xcassets */,
+				28D5C5FD17B520EBAEB5AD1C /* libPods-OpenAPI.a */,
 			);
-			name = "Supporting Files";
-			path = ..;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BBF5DADC25EE20B200C1525D /* OpenAPI */ = {
+		BB96F14F25EE7A4C00DBC364 /* OpenAPI */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BBF5DAF125EE20B300C1525D /* Build configuration list for PBXNativeTarget "OpenAPI" */;
+			buildConfigurationList = BB96F16425EE7A4C00DBC364 /* Build configuration list for PBXNativeTarget "OpenAPI" */;
 			buildPhases = (
-				BBF5DAD925EE20B200C1525D /* Sources */,
-				BBF5DADA25EE20B200C1525D /* Frameworks */,
-				BBF5DADB25EE20B200C1525D /* Resources */,
+				0791EE96CA55DB88C31FCC91 /* [CP] Check Pods Manifest.lock */,
+				BB96F14C25EE7A4C00DBC364 /* Sources */,
+				BB96F14D25EE7A4C00DBC364 /* Frameworks */,
+				BB96F14E25EE7A4C00DBC364 /* Resources */,
+				768A21E683B0668284E4910C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -93,24 +111,24 @@
 			);
 			name = OpenAPI;
 			productName = OpenAPI;
-			productReference = BBF5DADD25EE20B200C1525D /* OpenAPI.app */;
+			productReference = BB96F15025EE7A4C00DBC364 /* OpenAPI.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		BBF5DAD525EE20B200C1525D /* Project object */ = {
+		BB96F14825EE7A4C00DBC364 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1230;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
-					BBF5DADC25EE20B200C1525D = {
+					BB96F14F25EE7A4C00DBC364 = {
 						CreatedOnToolsVersion = 12.3;
 					};
 				};
 			};
-			buildConfigurationList = BBF5DAD825EE20B200C1525D /* Build configuration list for PBXProject "OpenAPI" */;
+			buildConfigurationList = BB96F14B25EE7A4C00DBC364 /* Build configuration list for PBXProject "OpenAPI" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -118,55 +136,97 @@
 				en,
 				Base,
 			);
-			mainGroup = BBF5DAD425EE20B200C1525D;
-			productRefGroup = BBF5DADE25EE20B200C1525D /* Products */;
+			mainGroup = BB96F14725EE7A4C00DBC364;
+			productRefGroup = BB96F15125EE7A4C00DBC364 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BBF5DADC25EE20B200C1525D /* OpenAPI */,
+				BB96F14F25EE7A4C00DBC364 /* OpenAPI */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BBF5DADB25EE20B200C1525D /* Resources */ = {
+		BB96F14E25EE7A4C00DBC364 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBF5DAED25EE20B300C1525D /* LaunchScreen.storyboard in Resources */,
-				BBF5DAEA25EE20B300C1525D /* Assets.xcassets in Resources */,
-				BBF5DAE825EE20B200C1525D /* Main.storyboard in Resources */,
+				BB96F16025EE7A4C00DBC364 /* LaunchScreen.storyboard in Resources */,
+				BB96F15D25EE7A4C00DBC364 /* Assets.xcassets in Resources */,
+				BB96F15B25EE7A4C00DBC364 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0791EE96CA55DB88C31FCC91 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OpenAPI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		768A21E683B0668284E4910C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OpenAPI/Pods-OpenAPI-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OpenAPI/Pods-OpenAPI-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OpenAPI/Pods-OpenAPI-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		BBF5DAD925EE20B200C1525D /* Sources */ = {
+		BB96F14C25EE7A4C00DBC364 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBF5DAE525EE20B200C1525D /* ViewController.swift in Sources */,
-				BBF5DAE125EE20B200C1525D /* AppDelegate.swift in Sources */,
-				BBF5DAE325EE20B200C1525D /* SceneDelegate.swift in Sources */,
+				BB96F15825EE7A4C00DBC364 /* ViewController.swift in Sources */,
+				BB96F15425EE7A4C00DBC364 /* AppDelegate.swift in Sources */,
+				BB96F15625EE7A4C00DBC364 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BBF5DAE625EE20B200C1525D /* Main.storyboard */ = {
+		BB96F15925EE7A4C00DBC364 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BBF5DAE725EE20B200C1525D /* Base */,
+				BB96F15A25EE7A4C00DBC364 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		BBF5DAEB25EE20B300C1525D /* LaunchScreen.storyboard */ = {
+		BB96F15E25EE7A4C00DBC364 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BBF5DAEC25EE20B300C1525D /* Base */,
+				BB96F15F25EE7A4C00DBC364 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -174,7 +234,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		BBF5DAEF25EE20B300C1525D /* Debug */ = {
+		BB96F16225EE7A4C00DBC364 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -235,7 +295,7 @@
 			};
 			name = Debug;
 		};
-		BBF5DAF025EE20B300C1525D /* Release */ = {
+		BB96F16325EE7A4C00DBC364 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -290,8 +350,9 @@
 			};
 			name = Release;
 		};
-		BBF5DAF225EE20B300C1525D /* Debug */ = {
+		BB96F16525EE7A4C00DBC364 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C5D2C9701A6883BDD8F61D2 /* Pods-OpenAPI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -309,8 +370,9 @@
 			};
 			name = Debug;
 		};
-		BBF5DAF325EE20B300C1525D /* Release */ = {
+		BB96F16625EE7A4C00DBC364 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FD9372E28006270E66E9AA5 /* Pods-OpenAPI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -331,25 +393,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BBF5DAD825EE20B200C1525D /* Build configuration list for PBXProject "OpenAPI" */ = {
+		BB96F14B25EE7A4C00DBC364 /* Build configuration list for PBXProject "OpenAPI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BBF5DAEF25EE20B300C1525D /* Debug */,
-				BBF5DAF025EE20B300C1525D /* Release */,
+				BB96F16225EE7A4C00DBC364 /* Debug */,
+				BB96F16325EE7A4C00DBC364 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BBF5DAF125EE20B300C1525D /* Build configuration list for PBXNativeTarget "OpenAPI" */ = {
+		BB96F16425EE7A4C00DBC364 /* Build configuration list for PBXNativeTarget "OpenAPI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BBF5DAF225EE20B300C1525D /* Debug */,
-				BBF5DAF325EE20B300C1525D /* Release */,
+				BB96F16525EE7A4C00DBC364 /* Debug */,
+				BB96F16625EE7A4C00DBC364 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = BBF5DAD525EE20B200C1525D /* Project object */;
+	rootObject = BB96F14825EE7A4C00DBC364 /* Project object */;
 }
