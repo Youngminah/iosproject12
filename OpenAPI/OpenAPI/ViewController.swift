@@ -6,8 +6,6 @@
 //
 
 
-// Swift // // Add this to the header of your file, e.g. in ViewController.swift
-
 import FBSDKLoginKit
 
 class ViewController: UIViewController , LoginButtonDelegate
@@ -18,8 +16,9 @@ class ViewController: UIViewController , LoginButtonDelegate
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        if let token = AccessToken.current,
-            !token.isExpired {
+        self.navigationController?.navigationBar.isHidden = true
+        
+        if let token = AccessToken.current,!token.isExpired {
             // User is logged in, do work such as go to next view controller.
             let token = token.tokenString
             let request = FBSDKLoginKit.GraphRequest(graphPath: "me",
@@ -27,14 +26,17 @@ class ViewController: UIViewController , LoginButtonDelegate
                                                      tokenString: token,
                                                      version: nil,
                                                      httpMethod: .get)
-            request.start(completionHandler: {connection, result, error in
-                            print("\(result)")
-                
-            })
+            request.start(completionHandler: {connection, result, error in print("\(result)")})
+            print("login")
         }
         else{
             loginButton.delegate = self
             loginButton.permissions = ["public_profile", "email"]
+            print("notlogin")
+            //화면 전환
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let nextView = mainStoryboard.instantiateViewController(identifier: "TabBarController")
+            self.navigationController?.pushViewController(nextView, animated: true)
         }
     }
     
@@ -45,9 +47,7 @@ class ViewController: UIViewController , LoginButtonDelegate
                                                  tokenString: token,
                                                  version: nil,
                                                  httpMethod: .get)
-        request.start(completionHandler: {connection, result, error in
-                        print("\(result)")
-        })
+        request.start(completionHandler: {connection, result, error in print("\(result)") })
     }
     
     func loginButtonDidLogOut(_ loginButton: FBLoginButton) {

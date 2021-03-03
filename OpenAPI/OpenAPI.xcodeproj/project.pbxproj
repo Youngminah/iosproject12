@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,10 @@
 		BB96F15B25EE7A4C00DBC364 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB96F15925EE7A4C00DBC364 /* Main.storyboard */; };
 		BB96F15D25EE7A4C00DBC364 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB96F15C25EE7A4C00DBC364 /* Assets.xcassets */; };
 		BB96F16025EE7A4C00DBC364 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB96F15E25EE7A4C00DBC364 /* LaunchScreen.storyboard */; };
+		BBDB125C25EFCB8F004F26C6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDB125B25EFCB8F004F26C6 /* MenuViewController.swift */; };
+		BBDB127725EFE51F004F26C6 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDB127625EFE51F004F26C6 /* TabBarController.swift */; };
+		BBDB128125EFF9BA004F26C6 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDB128025EFF9BA004F26C6 /* NewsViewController.swift */; };
+		BBDB128525EFFFFC004F26C6 /* articles.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDB128425EFFFFC004F26C6 /* articles.swift */; };
 		F5E98BB077B1338A0B837A47 /* libPods-OpenAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D5C5FD17B520EBAEB5AD1C /* libPods-OpenAPI.a */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +32,10 @@
 		BB96F15C25EE7A4C00DBC364 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB96F15F25EE7A4C00DBC364 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB96F16125EE7A4C00DBC364 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBDB125B25EFCB8F004F26C6 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		BBDB127625EFE51F004F26C6 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		BBDB128025EFF9BA004F26C6 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		BBDB128425EFFFFC004F26C6 /* articles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = articles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +56,6 @@
 				0C5D2C9701A6883BDD8F61D2 /* Pods-OpenAPI.debug.xcconfig */,
 				4FD9372E28006270E66E9AA5 /* Pods-OpenAPI.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -73,15 +80,43 @@
 		BB96F15225EE7A4C00DBC364 /* OpenAPI */ = {
 			isa = PBXGroup;
 			children = (
-				BB96F15325EE7A4C00DBC364 /* AppDelegate.swift */,
-				BB96F15525EE7A4C00DBC364 /* SceneDelegate.swift */,
-				BB96F15725EE7A4C00DBC364 /* ViewController.swift */,
-				BB96F15925EE7A4C00DBC364 /* Main.storyboard */,
 				BB96F15C25EE7A4C00DBC364 /* Assets.xcassets */,
-				BB96F15E25EE7A4C00DBC364 /* LaunchScreen.storyboard */,
+				BB96F15725EE7A4C00DBC364 /* ViewController.swift */,
+				BBDB125B25EFCB8F004F26C6 /* MenuViewController.swift */,
 				BB96F16125EE7A4C00DBC364 /* Info.plist */,
+				BBDB128025EFF9BA004F26C6 /* NewsViewController.swift */,
+				BBDB127625EFE51F004F26C6 /* TabBarController.swift */,
+				BBDB128825F00002004F26C6 /* model */,
+				BBDB126725EFCC93004F26C6 /* resources */,
+				BBDB125E25EFCB95004F26C6 /* storyboards */,
 			);
 			path = OpenAPI;
+			sourceTree = "<group>";
+		};
+		BBDB125E25EFCB95004F26C6 /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				BB96F15925EE7A4C00DBC364 /* Main.storyboard */,
+				BB96F15E25EE7A4C00DBC364 /* LaunchScreen.storyboard */,
+			);
+			name = storyboards;
+			sourceTree = "<group>";
+		};
+		BBDB126725EFCC93004F26C6 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				BB96F15325EE7A4C00DBC364 /* AppDelegate.swift */,
+				BB96F15525EE7A4C00DBC364 /* SceneDelegate.swift */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		BBDB128825F00002004F26C6 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				BBDB128425EFFFFC004F26C6 /* articles.swift */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 		C4FE3AC158D68BDEFA4715BF /* Frameworks */ = {
@@ -207,8 +242,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB96F15825EE7A4C00DBC364 /* ViewController.swift in Sources */,
+				BBDB128525EFFFFC004F26C6 /* articles.swift in Sources */,
 				BB96F15425EE7A4C00DBC364 /* AppDelegate.swift in Sources */,
 				BB96F15625EE7A4C00DBC364 /* SceneDelegate.swift in Sources */,
+				BBDB128125EFF9BA004F26C6 /* NewsViewController.swift in Sources */,
+				BBDB127725EFE51F004F26C6 /* TabBarController.swift in Sources */,
+				BBDB125C25EFCB8F004F26C6 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
