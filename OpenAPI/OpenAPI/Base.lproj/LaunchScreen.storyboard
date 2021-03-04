@@ -16,12 +16,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DayNotice" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZf-2m-Fmk">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Noty." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZf-2m-Fmk">
                                 <rect key="frame" x="0.0" y="368" width="414" height="170"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="170" id="LbL-dY-HAM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Notification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BrA-DA-vbR">
+                                <rect key="frame" x="138" y="480" width="138" height="22"/>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -32,6 +38,8 @@
                             <constraint firstItem="bZf-2m-Fmk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NVg-qq-QZN"/>
                             <constraint firstItem="bZf-2m-Fmk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Wce-m2-IXG"/>
                             <constraint firstItem="bZf-2m-Fmk" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="WiA-BN-UDo"/>
+                            <constraint firstItem="BrA-DA-vbR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="XH7-9Y-5np"/>
+                            <constraint firstItem="BrA-DA-vbR" firstAttribute="top" secondItem="bZf-2m-Fmk" secondAttribute="bottom" constant="-58" id="hoi-Li-J4s"/>
                         </constraints>
                     </view>
                 </viewController>

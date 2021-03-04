@@ -26,7 +26,13 @@ class ViewController: UIViewController , LoginButtonDelegate
                                                      tokenString: token,
                                                      version: nil,
                                                      httpMethod: .get)
-            request.start(completionHandler: {connection, result, error in print("\(result)")})
+            request.start(completionHandler: {connection, result, error in
+                print("\(result)")
+                guard error == nil else { return }
+                let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                let nextView = mainStoryboard.instantiateViewController(identifier: "TabBarController")
+                self.navigationController?.pushViewController(nextView, animated: true)
+            })
             print("login")
         }
         else{
@@ -34,9 +40,6 @@ class ViewController: UIViewController , LoginButtonDelegate
             loginButton.permissions = ["public_profile", "email"]
             print("notlogin")
             //화면 전환
-            let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let nextView = mainStoryboard.instantiateViewController(identifier: "TabBarController")
-            self.navigationController?.pushViewController(nextView, animated: true)
         }
     }
     
@@ -47,7 +50,12 @@ class ViewController: UIViewController , LoginButtonDelegate
                                                  tokenString: token,
                                                  version: nil,
                                                  httpMethod: .get)
-        request.start(completionHandler: {connection, result, error in print("\(result)") })
+        request.start(completionHandler: {connection, result, error in
+            guard error == nil else { return }
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let nextView = mainStoryboard.instantiateViewController(identifier: "TabBarController")
+            self.navigationController?.pushViewController(nextView, animated: true)
+        })
     }
     
     func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
