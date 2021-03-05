@@ -19,6 +19,10 @@ class ViewController: UIViewController , LoginButtonDelegate
         NotificationCenter.default.addObserver(self, selector: #selector(logoutAction), name: Notification.Name("logoutButtonClicked"), object: nil)
         self.navigationController?.navigationBar.isHidden = true
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if let token = AccessToken.current,!token.isExpired {
             // User is logged in, do work such as go to next view controller.
             let token = token.tokenString
@@ -41,7 +45,6 @@ class ViewController: UIViewController , LoginButtonDelegate
             loginButton.delegate = self
             loginButton.permissions = ["public_profile", "email"]
             print("notlogin")
-            //화면 전환
         }
     }
     
@@ -54,6 +57,7 @@ class ViewController: UIViewController , LoginButtonDelegate
                                                  httpMethod: .get)
         request.start(completionHandler: {connection, result, error in
             guard error == nil else { return }
+            print("loginbutton")
             let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             let nextView = mainStoryboard.instantiateViewController(identifier: "TabBarController")
             nextView.modalPresentationStyle = .fullScreen
@@ -68,6 +72,7 @@ class ViewController: UIViewController , LoginButtonDelegate
     @objc func logoutAction(){
         let manager = LoginManager()
         manager.logOut()
+        let cookies = HTTPCookieStorage.shared
     }
     
 }

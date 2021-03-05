@@ -90,7 +90,10 @@ class NewsCell: UITableViewCell{
         guard let img = newsdata[indexPath.row].urlToImage else {
             return
         }
-        if let data = try? Data(contentsOf: URL(string: img )! ) {
+        guard let url = URL(string: img) else {
+            return
+        }
+        if let data = try? Data(contentsOf: url) {
             DispatchQueue.main.async {
                 self.newsImage.image = UIImage(data: data)
             }
