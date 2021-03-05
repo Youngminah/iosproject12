@@ -10,16 +10,14 @@ import Alamofire
 
 class NewsViewController: UITableViewController{
 
-
     var news : Response?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getName()
     }
-    
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       // print(news)
         if let newsdata = news?.articles {
             return newsdata.count
         }
@@ -45,11 +43,7 @@ class NewsViewController: UITableViewController{
     
     func getName(){
         let url = "https://newsapi.org/v2/top-headlines?country=kr&apiKey=4a2e936c4da34186afc689f99e36bddf"
-        AF.request(url,
-                   method: .get,
-                   parameters: nil,
-                   encoding: URLEncoding.default,
-                   headers: ["Content-Type":"application/json", "Accept":"application/json"])
+        AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: ["Content-Type":"application/json", "Accept":"application/json"])
             .validate(statusCode: 200..<300)
             .responseJSON { (response) in
                 //여기서 가져온 데이터를 자유롭게 활용하세요.
@@ -68,11 +62,8 @@ class NewsViewController: UITableViewController{
                 default:
                     return
                 }
-
         }
     }
-    
-
 }
 
 class NewsCell: UITableViewCell{
@@ -81,12 +72,20 @@ class NewsCell: UITableViewCell{
     @IBOutlet weak var newsName: UILabel!
     
     func updateUI(news: Response, indexPath: IndexPath){
-        
         guard let newsdata = news.articles else {
             return
         }
-        newsTitle.text = newsdata[indexPath.row].title
-        newsName.text = newsdata[indexPath.row].source.name
+        let title = newsdata[indexPath.row].title
+        var index: Int!
+        if let range = title.range(of: "-", options: .backwards) {
+            index = title.distance(from: title.startIndex, to: range.lowerBound)
+        }
+        let startIdx: String.Index = title.index(title.startIndex, offsetBy: index+1)
+        let result1 = String(title[startIdx...])
+        let endIdx: String.Index = title.index(title.startIndex, offsetBy: index-1)
+        let result2 = String(title[...endIdx])
+        newsTitle.text = result2
+        newsName.text = result1
         guard let img = newsdata[indexPath.row].urlToImage else {
             return
         }
@@ -98,6 +97,5 @@ class NewsCell: UITableViewCell{
                 self.newsImage.image = UIImage(data: data)
             }
         }
-        
     }
 }

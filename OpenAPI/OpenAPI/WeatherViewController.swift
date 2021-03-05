@@ -18,11 +18,9 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var currentMinTempLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    
     var models: WeatherInfo?
     let locationManager = CLLocationManager()
     var currentLocation: CLLocation?
-    
     var locationLarge: String?
     var locationSmall: String?
     
@@ -60,8 +58,11 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func requestWeatherForLocation(){
-        let lat = 37.535978
-        let lon = 127.071539
+        guard let currentLocation = self.currentLocation else {
+            return
+        }
+        let lat = currentLocation.coordinate.latitude
+        let lon = currentLocation.coordinate.longitude
         let findLocation: CLLocation = CLLocation(latitude: lat, longitude: lon)
         let geoCoder: CLGeocoder = CLGeocoder()
         let local: Locale = Locale(identifier: "Ko-kr") // Korea
@@ -75,8 +76,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.currentLocationLabel.text = str1 + " " + str2
             }
         }
-    
         let url = "https://api.openweathermap.org/data/2.5/onecall?lat=\(lat)&lon=\(lon)&exclude=minutely,daily&appid=2951cd83b9f3c771d11f73a41a64a730"
+        //날씨 API 불러오기
         AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: ["Content-Type":"application/json", "Accept":"application/json"])
             .validate(statusCode: 200..<300)
             .responseJSON { (response) in
@@ -90,10 +91,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                             guard let modelInfo = self.models else{
                                 return
                             }
-                            self.currentTempLabel.text = self.kelvinToCelcious(kelvin: modelInfo.current.temp) + "º"
-                            self.currentMaxTempLabel.text = self.kelvinToCelcious(kelvin: modelInfo.current.feels_like) + "º"
-                            self.currentMinTempLabel.text = String(modelInfo.current.humidity) + "%"
-                            self.currentWeatherImage.image = UIImage(named: self.weatherImageMatch(weather: modelInfo.current.weather[0]))
+                            self.updateUI(modelInfo: modelInfo)
                             self.tableView.reloadData()
                         }
                     }catch{
@@ -106,8 +104,11 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    func updateUI(){
-        
+    func updateUI(modelInfo: WeatherInfo){
+        self.currentTempLabel.text = self.kelvinToCelcious(kelvin: modelInfo.current.temp) + "º"
+        self.currentMaxTempLabel.text = self.kelvinToCelcious(kelvin: modelInfo.current.feels_like) + "º"
+        self.currentMinTempLabel.text = String(modelInfo.current.humidity) + "%"
+        self.currentWeatherImage.image = UIImage(named: self.weatherImageMatch(weather: modelInfo.current.weather[0]))
     }
     
     func setupLocation(){
@@ -150,10 +151,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             return "003-sunny"
         }
     }
-    
 }
-
-
 
 class ListCell: UITableViewCell{
     @IBOutlet weak var dayLabel: UILabel!

@@ -18,7 +18,6 @@
 		BB96F15B25EE7A4C00DBC364 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB96F15925EE7A4C00DBC364 /* Main.storyboard */; };
 		BB96F15D25EE7A4C00DBC364 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB96F15C25EE7A4C00DBC364 /* Assets.xcassets */; };
 		BB96F16025EE7A4C00DBC364 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB96F15E25EE7A4C00DBC364 /* LaunchScreen.storyboard */; };
-		BBDB125C25EFCB8F004F26C6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDB125B25EFCB8F004F26C6 /* MenuViewController.swift */; };
 		BBDB127725EFE51F004F26C6 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDB127625EFE51F004F26C6 /* TabBarController.swift */; };
 		BBDB128125EFF9BA004F26C6 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDB128025EFF9BA004F26C6 /* NewsViewController.swift */; };
 		BBDB128525EFFFFC004F26C6 /* articles.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDB128425EFFFFC004F26C6 /* articles.swift */; };
@@ -42,7 +41,6 @@
 		BB96F15C25EE7A4C00DBC364 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB96F15F25EE7A4C00DBC364 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB96F16125EE7A4C00DBC364 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BBDB125B25EFCB8F004F26C6 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		BBDB127625EFE51F004F26C6 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BBDB128025EFF9BA004F26C6 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		BBDB128425EFFFFC004F26C6 /* articles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = articles.swift; sourceTree = "<group>"; };
@@ -92,7 +90,6 @@
 			children = (
 				BB96F15C25EE7A4C00DBC364 /* Assets.xcassets */,
 				BB96F15725EE7A4C00DBC364 /* ViewController.swift */,
-				BBDB125B25EFCB8F004F26C6 /* MenuViewController.swift */,
 				BB96F16125EE7A4C00DBC364 /* Info.plist */,
 				BBDB128025EFF9BA004F26C6 /* NewsViewController.swift */,
 				BBDB127625EFE51F004F26C6 /* TabBarController.swift */,
@@ -266,7 +263,6 @@
 				BB2908C925F27F1500939ED2 /* WeatherInfo.swift in Sources */,
 				BBDB127725EFE51F004F26C6 /* TabBarController.swift in Sources */,
 				BB8D781E25F11E120023DDEE /* CoronaViewController.swift in Sources */,
-				BBDB125C25EFCB8F004F26C6 /* MenuViewController.swift in Sources */,
 				BB2908C125F2490300939ED2 /* WeatherViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
