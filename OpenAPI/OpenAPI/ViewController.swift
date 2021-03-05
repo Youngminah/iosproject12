@@ -16,6 +16,7 @@ class ViewController: UIViewController , LoginButtonDelegate
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(logoutAction), name: Notification.Name("logoutButtonClicked"), object: nil)
         self.navigationController?.navigationBar.isHidden = true
         
         if let token = AccessToken.current,!token.isExpired {
@@ -31,7 +32,8 @@ class ViewController: UIViewController , LoginButtonDelegate
                 guard error == nil else { return }
                 let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
                 let nextView = mainStoryboard.instantiateViewController(identifier: "TabBarController")
-                self.navigationController?.pushViewController(nextView, animated: true)
+                nextView.modalPresentationStyle = .fullScreen
+                self.present(nextView, animated: true, completion: nil)
             })
             print("login")
         }
@@ -54,12 +56,18 @@ class ViewController: UIViewController , LoginButtonDelegate
             guard error == nil else { return }
             let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             let nextView = mainStoryboard.instantiateViewController(identifier: "TabBarController")
-            self.navigationController?.pushViewController(nextView, animated: true)
+            nextView.modalPresentationStyle = .fullScreen
+            self.present(nextView, animated: true, completion: nil)
         })
     }
     
     func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
         
+    }
+    
+    @objc func logoutAction(){
+        let manager = LoginManager()
+        manager.logOut()
     }
     
 }

@@ -13,4 +13,12 @@ class SettingViewController: UITableViewController {
         super.viewDidLoad()
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 2 {
+            NotificationCenter.default.post(name: Notification.Name("logoutButtonClicked"), object: nil)
+            self.dismiss(animated: true, completion: nil)
+            print("a")
+        }
+        
+    }
 }
