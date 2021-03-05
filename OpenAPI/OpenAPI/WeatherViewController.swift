@@ -10,9 +10,14 @@ import CoreLocation
 import Alamofire
 
 class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
-        
-
-    @IBOutlet weak var currentTimeLabel: UILabel!
+    
+    @IBOutlet weak var currentLocationLabel: UILabel!
+    @IBOutlet weak var currentWeatherImage: UIImageView!
+    @IBOutlet weak var currentTempLabel: UILabel!
+    @IBOutlet weak var currentMaxTempLabel: UILabel!
+    @IBOutlet weak var currentMinTempLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    
     
     var models: WeatherInfo?
     let locationManager = CLLocationManager()
@@ -32,38 +37,24 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        if let modelInfo = models {
+            return modelInfo.hourly.count
+        }
+        else{
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
-    }
-    
-
-    
-//    //헤더뷰 어떻게 표시?
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        switch kind { // kind의 종류는 크게 해더와 푸터가 있음
-//        //헤더인 케이스
-//        case UICollectionView.elementKindSectionHeader:
-//            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "TrackCollectionHeaderView", for: indexPath) as? TrackCollectionHeaderView else {
-//                return UICollectionReusableView()
-//            }
-//            return header
-//        default:
-//            return UICollectionReusableView()
-//        }
-//    }
-    
-
-    
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if !locations.isEmpty, currentLocation == nil{
-            currentLocation = locations.first
-            locationManager.stopUpdatingLocation()
-            requestWeatherForLocation()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as? ListCell else{
+            return UITableViewCell()
         }
+        guard let modelInfo = self.models else {
+            return UITableViewCell()
+        }
+        let unixtime = Double(modelInfo.hourly[indexPath.row].dt)
+        cell.dayStringFromTime(unixTime: unixtime)
+        return cell
     }
     
     func requestWeatherForLocation(){
@@ -82,11 +73,10 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             if let address: [CLPlacemark] = place {
                 self.locationLarge = address.last?.administrativeArea
                 self.locationSmall = address.last?.locality
-                print("\(self.locationLarge) | \(self.locationSmall)")
                 guard let str1 = self.locationLarge, let str2 = self.locationSmall else {
                     return
                 }
-                self.navigationItem.title = str1 + " " + str2
+                self.currentLocationLabel.text = str1 + " " + str2
             }
         }
     
@@ -106,9 +96,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                         let response = try JSONDecoder().decode(WeatherInfo.self, from: result)
                         DispatchQueue.main.async{
                             self.models = response
-                            let date = self.dayStringFromTime(unixTime: Double(response.current.dt))
-                            self.currentTimeLabel.text = date + " 기준"
-                            print(date)
+                            self.tableView.reloadData()
                         }
                     }catch{
                         print(error)
@@ -118,15 +106,6 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                     return
                 }
         }
-    }
-    
-    func dayStringFromTime(unixTime: Double) -> String {
-        let date = NSDate(timeIntervalSince1970: unixTime)
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy.MM.dd HH:mma"
-        dateFormatter.timeZone = NSTimeZone(name: "Asia") as TimeZone?
-        let dateString = dateFormatter.string(from: date as Date)
-        return dateString
     }
     
     func updateUI(){
@@ -139,11 +118,32 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         locationManager.startUpdatingLocation()
     }
     
-
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if !locations.isEmpty, currentLocation == nil{
+            currentLocation = locations.first
+            locationManager.stopUpdatingLocation()
+            requestWeatherForLocation()
+        }
+    }
     
 }
 
 
 
 class ListCell: UITableViewCell{
+    @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var weatherTimeImage: UIImageView!
+    @IBOutlet weak var tempHourlyLabel: UILabel!
+    
+    func dayStringFromTime(unixTime: Double){
+        let date = NSDate(timeIntervalSince1970: unixTime)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM월dd일 HH:mma"
+        dateFormatter.timeZone = NSTimeZone(name: "Asia") as TimeZone?
+        let dateString = dateFormatter.string(from: date as Date)
+        let arr = dateString.components(separatedBy: " ")
+        dayLabel.text = arr[0]
+        timeLabel.text = arr[1]
+    }
 }
