@@ -54,16 +54,12 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         let unixtime = Double(modelInfo.hourly[indexPath.row].dt)
         cell.dayStringFromTime(unixTime: unixtime)
+        cell.tempHourlyLabel.text = self.kelvinToCelcious(kelvin: modelInfo.hourly[indexPath.row].temp) + "º"
+        cell.weatherTimeImage.image = UIImage(named: self.weatherImageMatch(weather: modelInfo.hourly[indexPath.row].weather[0]))
         return cell
     }
     
     func requestWeatherForLocation(){
-//        guard let currentLocation = currentLocation else {
-//            return
-//        }
-//        let long = currentLocation.coordinate.longitude
-//        let lat = currentLocation.coordinate.latitude
-        
         let lat = 37.535978
         let lon = 127.071539
         let findLocation: CLLocation = CLLocation(latitude: lat, longitude: lon)
@@ -80,13 +76,8 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
     
-        
         let url = "https://api.openweathermap.org/data/2.5/onecall?lat=\(lat)&lon=\(lon)&exclude=minutely,daily&appid=2951cd83b9f3c771d11f73a41a64a730"
-        AF.request(url,
-                   method: .get,
-                   parameters: nil,
-                   encoding: URLEncoding.default,
-                   headers: ["Content-Type":"application/json", "Accept":"application/json"])
+        AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: ["Content-Type":"application/json", "Accept":"application/json"])
             .validate(statusCode: 200..<300)
             .responseJSON { (response) in
                 switch response.result{
@@ -96,6 +87,13 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
                         let response = try JSONDecoder().decode(WeatherInfo.self, from: result)
                         DispatchQueue.main.async{
                             self.models = response
+                            guard let modelInfo = self.models else{
+                                return
+                            }
+                            self.currentTempLabel.text = self.kelvinToCelcious(kelvin: modelInfo.current.temp) + "º"
+                            self.currentMaxTempLabel.text = self.kelvinToCelcious(kelvin: modelInfo.current.feels_like) + "º"
+                            self.currentMinTempLabel.text = String(modelInfo.current.humidity) + "%"
+                            self.currentWeatherImage.image = UIImage(named: self.weatherImageMatch(weather: modelInfo.current.weather[0]))
                             self.tableView.reloadData()
                         }
                     }catch{
@@ -123,6 +121,33 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             currentLocation = locations.first
             locationManager.stopUpdatingLocation()
             requestWeatherForLocation()
+        }
+    }
+    
+    func kelvinToCelcious(kelvin: Double) -> String{
+        let temp = kelvin - 273.15
+        let result = String(format: "%.1f",temp)
+        return result
+    }
+    
+    func weatherImageMatch(weather: Weather) -> String{
+        if weather.main == "Clear"{
+            return "sunny"
+        }
+        else if weather.description == "overcast clouds"{
+            return "005-cloudy"
+        }
+        else if weather.description == "few clouds"{
+            return "002-sunny"
+        }
+        else if weather.description == "scattered clouds"{
+            return "001-cloudy day"
+        }
+        else if weather.main == "Clouds"{
+            return "005-cloudy"
+        }
+        else{
+            return "003-sunny"
         }
     }
     

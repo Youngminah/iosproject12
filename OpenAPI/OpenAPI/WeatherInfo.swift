@@ -17,6 +17,8 @@ struct WeatherInfo: Codable{
 struct Current: Codable {
     let dt: Int
     let temp: Double
+    let feels_like: Double
+    let humidity: Int
     let weather: [Weather]
 }
 
