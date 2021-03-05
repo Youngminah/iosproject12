@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB2908BD25F2180100939ED2 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2908BC25F2180100939ED2 /* SettingViewController.swift */; };
 		BB8D781E25F11E120023DDEE /* CoronaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8D781D25F11E120023DDEE /* CoronaViewController.swift */; };
 		BB8D782C25F134B70023DDEE /* CoronaTotal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8D782B25F134B70023DDEE /* CoronaTotal.swift */; };
 		BB96F15425EE7A4C00DBC364 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB96F15325EE7A4C00DBC364 /* AppDelegate.swift */; };
@@ -26,6 +27,7 @@
 		0C5D2C9701A6883BDD8F61D2 /* Pods-OpenAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenAPI.debug.xcconfig"; path = "Target Support Files/Pods-OpenAPI/Pods-OpenAPI.debug.xcconfig"; sourceTree = "<group>"; };
 		28D5C5FD17B520EBAEB5AD1C /* libPods-OpenAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OpenAPI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FD9372E28006270E66E9AA5 /* Pods-OpenAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenAPI.release.xcconfig"; path = "Target Support Files/Pods-OpenAPI/Pods-OpenAPI.release.xcconfig"; sourceTree = "<group>"; };
+		BB2908BC25F2180100939ED2 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		BB8D781D25F11E120023DDEE /* CoronaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaViewController.swift; sourceTree = "<group>"; };
 		BB8D782B25F134B70023DDEE /* CoronaTotal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaTotal.swift; sourceTree = "<group>"; };
 		BB96F15025EE7A4C00DBC364 /* OpenAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +93,7 @@
 				BBDB128025EFF9BA004F26C6 /* NewsViewController.swift */,
 				BBDB127625EFE51F004F26C6 /* TabBarController.swift */,
 				BB8D781D25F11E120023DDEE /* CoronaViewController.swift */,
+				BB2908BC25F2180100939ED2 /* SettingViewController.swift */,
 				BBDB128825F00002004F26C6 /* model */,
 				BBDB126725EFCC93004F26C6 /* resources */,
 				BBDB125E25EFCB95004F26C6 /* storyboards */,
@@ -252,6 +255,7 @@
 				BB96F15425EE7A4C00DBC364 /* AppDelegate.swift in Sources */,
 				BB8D782C25F134B70023DDEE /* CoronaTotal.swift in Sources */,
 				BB96F15625EE7A4C00DBC364 /* SceneDelegate.swift in Sources */,
+				BB2908BD25F2180100939ED2 /* SettingViewController.swift in Sources */,
 				BBDB128125EFF9BA004F26C6 /* NewsViewController.swift in Sources */,
 				BBDB127725EFE51F004F26C6 /* TabBarController.swift in Sources */,
 				BB8D781E25F11E120023DDEE /* CoronaViewController.swift in Sources */,
