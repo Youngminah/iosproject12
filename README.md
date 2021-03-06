@@ -191,7 +191,7 @@ spriteKit없이 GCD와 애니메이션만을 이용하여 간단한 게임을 �
 ### 💡  5. Daily Notice. - OpenAPI (직접 구상)
 [폴더바로가기](https://github.com/Youngminah/iosproject12/tree/master/OpenAPI)
 
-**`OpenAPI`: iOS Alamofire Rest API ** 
+**`OpenAPI`: iOS Alamofire Rest API** 
 
 → Rest API를 각각 다른 3곳에서 받아와서 네트워크 통신의 기초를 연습하기 위한 앱.
 
