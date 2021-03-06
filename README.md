@@ -11,7 +11,7 @@
 → 아이폰se까지 돌려도 화면이 깨지지 않은 AutoLayout을 적용.
 
 ### ▶︎ 실행화면
-<img src="https://github.com/Youngminah/largegif/blob/master/hwahae.gif" title="auto gif" width="30%"/>
+<img src="https://github.com/Youngminah/iosproject12/blob/master/gif%EC%A0%80%EC%9E%A5%EC%86%8C/hwahae.gif" title="auto gif" width="30%"/>
 
 ### ▶︎ 느낀점
 
@@ -58,7 +58,7 @@
 
 
 ### ▶︎ 실행화면
-<img src="https://github.com/Youngminah/largegif/blob/master/randomMusic.gif" title="music gif" width="30%"/>
+<img src="https://github.com/Youngminah/iosproject12/blob/master/gif%EC%A0%80%EC%9E%A5%EC%86%8C/randomMusic.gif" title="music gif" width="30%"/>
 
 ### ▶︎ 느낀점
 
@@ -113,7 +113,7 @@
 
 
 ### ▶︎ 실행화면
-<img src="https://github.com/Youngminah/largegif/blob/master/PhoneBook.gif" title="phone book gif" width="30%"/>
+<img src="https://github.com/Youngminah/iosproject12/blob/master/gif%EC%A0%80%EC%9E%A5%EC%86%8C/PhoneBook.gif" title="phone book gif" width="30%"/>
 
 ### ▶︎ 느낀점
 
@@ -144,7 +144,7 @@
 
 
 ### ▶︎ 실행화면
-<img src="https://github.com/Youngminah/largegif/blob/master/UnderTheSea.gif" alt="under the sea gif" title="Databay showcase gif" width="30%"/>
+<img src="https://github.com/Youngminah/iosproject12/blob/master/gif%EC%A0%80%EC%9E%A5%EC%86%8C/UnderTheSea.gif" alt="under the sea gif" title="Databay showcase gif" width="30%"/>
 
 ### ▶︎ 느낀점
 
@@ -172,6 +172,75 @@ spriteKit없이 GCD와 애니메이션만을 이용하여 간단한 게임을 �
 
 -------------------------------------------------------
 <br></br>
+
+## 💡  5. Daily Notice. - OpenAPI (직접 구상)
+[폴더바로가기](https://github.com/Youngminah/iosproject12/tree/master/OpenAPI)
+
+**`OpenAPI`: iOS Alamofire Rest API ** 
+
+→ Rest API를 각각 다른 3곳에서 받아와서 네트워크 통신의 기초를 연습하기 위한 앱.
+
+→ 페이스북 연동 로그인 구현.
+
+→ Alamofire 라이브러리를 이용하여 GET으로 데이터를 받아왔고, 파싱을 위하여 Codable을 이용하여 JSON 형식으로 Encoding, Decoding 해주었다.
+
+
+
+
+
+
+### ▶︎ 실행화면
+<img src="https://github.com/Youngminah/iosproject12/blob/master/gif%EC%A0%80%EC%9E%A5%EC%86%8C/Daily%20Notice.gif" alt="under the sea gif" title="Databay showcase gif" width="30%"/>
+
+
+
+
+### ▶︎ 앱 설명
+
+3곳에서 API를 가져와 Alamofire와 Codable을 연습하는 것에 초점을 맞춘 앱이다.
+
+짜집기 인강으로 배운 `URLSession`으로 데이터를 받아올까 하였지만, 
+
+`Alamofire`는 아주 잘 만들어진 라이브러리로 최근 회사에서는 Alamofire를 잘 다루는 사람을 우대하는 곳도 많다 하여 Alamofire로 구현하였다.
+
+코로나 현재 실시간 상황, 현재 위치의 현재 날씨, 실시간 뉴스, 페이스북 연동 로그인을 구현하였다.
+
+실시간 위치를 받아오기 위하여 `CLLocation`이용.
+
+코로나 정보를 차트로 한눈에 보여주기 위하여 `Charts` 라이브러리 추가하여 이용.
+
+<br></br>
+
+### ▶︎ 느낀점
+
+
+Rest API를 연습해보기 위해서 `어떤 주제로 어떠한 기능이 있는 앱을 구현해 볼 것인가? 어떤 UI/UX 디자인으로 깔끔해보이게 만들것인가?` 를 정하는 것이 구현 못지않게 오래걸렸다. 
+단순히 API만을 위한 앱이 아니라 어느정도 UI적으로도 깔끔한 디자인을 구현하려고 하였기 때문에, 아이디어만 짜는데 총 일주일의 기간중 2-3일은 걸렸다. 
+기획의 중요성을 느꼈고, UI/UX 디자이너의 필요성을 체감하게 되었다. 
+
+OpenAPI는 제대로 정리 되지 않은 곳도 있어서, 다시 고르게 된 것도 몇번이였다. 
+
+데이터를 너무 많이 불러올 경우 UI에 올려주는데 로딩시간이 길어서, 페이징으로 나누어 사용해야 될 것 같다.  (보통은 서버에서 나뉨)
+
+날씨 API는 우리나라에서 제공하던 유명한 곳들이 이제 유료로 전환을 해버려서 외국 사이트를 이용하였다. 
+
+확실히 한글로 되어있지 않아서 위치정보를 `GeoCoder`로 변환을 해주어야 하였고, 시간 또한 Unix시간이라 변환해주어야 했다. 
+
+UI에서 어려움을 느꼇던 점은 날씨 API에서 좀더 아이폰 기본 날씨앱과 비슷하게 만드려면 연습이 필요해보인다. (여러가지 슬라이딩이 많음)
+
+지금까지 만든 앱들에서 계속 비슷 비슷한 view들(테이블뷰, 컬렉션뷰,스택뷰, 기본뷰)들만 이용하여서, 이번앱에선 좀더 다양한 뷰들을 이용해보려고 차트, 탭바 등등을 이용해보았다. 하지만 아직 한참 부족해보임. 
+
+암튼, Alamofire로 데이터를 불러오거나 파싱하는것은 chrome extension에서 서버 연결할 때, axios로 해본적이 있어서 어렵지 않았다. 오히려 아직은 디자인이 어렵게 느껴진다🥲🥲
+
+
+<br></br>
+
+
+
+-------------------------------------------------------
+<br></br>
+
+
 
 ## :memo: Commit Convention
 
