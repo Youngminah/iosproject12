@@ -1,7 +1,22 @@
 
-# 미리보기 목차
+
+# 🏷 진행 기간 미리보기
+
 <br></br>
-## 📍  1.  화해 AutoLayout Clone 앱 (화해 어플 클론 코딩)
+| 앱 이름                 | 주제           | 진행기간                         |                                                  |
+| --------------------- | ------------- | --------------------------     |-----------------------------------------------------|
+| 화해 AutoLayout Clone  | AutoLayout    |  **2021.01.23 ~ 2021.01.30**    |  텍스트편집기를 사용하지 않고 서치바 이용이 더 적합해보임. |
+| Random Music          | LifeCycle     |  **2021.01.20 ~ 2021.02.06**    |                                                      |
+| Phone Book            | TableView     |  **2021.02.13 ~ 2021.02.20**    | 수정 할 수 있게 했으면 CRUD 에 적합함 (수정 완료 )            |
+| Under The Sea         | MultiThread   |  **2021.02.20 ~ 2021.02.27**    | |
+| Daily Notice.         | Rest API      |  **2021.02.27 ~ 2021.03.06**    | |
+
+<br></br>
+<br></br>
+
+# 🏷 프로젝트 미리보기
+<br></br>
+### 📍  1.  화해 AutoLayout Clone 앱 (화해 어플 클론 코딩)
 [폴더바로가기](https://github.com/Youngminah/iosproject12/tree/master/FirstApp)
 
 **`FirstApp`: iOS AutoLayout**
@@ -10,10 +25,10 @@
 
 → 아이폰se까지 돌려도 화면이 깨지지 않은 AutoLayout을 적용.
 
-### ▶︎ 실행화면
+#### ▶︎ 실행화면
 <img src="https://github.com/Youngminah/iosproject12/blob/master/gif%EC%A0%80%EC%9E%A5%EC%86%8C/hwahae.gif" title="auto gif" width="30%"/>
 
-### ▶︎ 느낀점
+#### ▶︎ 느낀점
 
 안드로이드 개발을 조금씩 해보다가 iOS 개발을 시작하니, 난해하였던 것 중 하나가 `AutoLayout`이였다.
 
@@ -24,7 +39,7 @@
 -------------------------------------------------------
 <br></br>
 
-## 🎼  2. Random Music 추천 앱 (직접 구상)
+### 🎼  2. Random Music 추천 앱 (직접 구상)
 
 [폴더바로가기](https://github.com/Youngminah/iosproject12/tree/master/LifeCycle)
 
@@ -41,7 +56,7 @@
 → 싱글톤 디자인 패턴을 이용하여 플레이어를 하나만 생성하여 구현.
 
 
-### ▶︎ iOS LifeCycle 함수 이용
+#### ▶︎ iOS LifeCycle 함수 이용
 
 | 함수이용         | 진행     | 코멘트                         |
 | ----------- | ------- | ---------------------------- |
@@ -57,10 +72,10 @@
 | sceneDidEnterBackgroound | ✔️      | |
 
 
-### ▶︎ 실행화면
+#### ▶︎ 실행화면
 <img src="https://github.com/Youngminah/iosproject12/blob/master/gif%EC%A0%80%EC%9E%A5%EC%86%8C/randomMusic.gif" title="music gif" width="30%"/>
 
-### ▶︎ 느낀점
+#### ▶︎ 느낀점
 
 
 최대한 MVVM패턴에 가깝게 디자인하려고 노력하였다.
@@ -76,7 +91,7 @@
 <br></br>
 
 
-## 📒  3.  연락처 앱 (직접 구상)
+### 📒  3.  연락처 앱 (직접 구상)
 [폴더바로가기](https://github.com/Youngminah/iosproject12/tree/master/TableView)
 
 **`TableView`: iOS 테이블 뷰 연습 앱**
@@ -84,7 +99,7 @@
 → 테이블 뷰를 만들기 위한 필수 프로토콜과 그 밖의 다양한 프로토콜을 사용하여 연락처를 저장하는 앱 구현.
 
 
-### ▶︎ CRUD
+#### ▶︎ CRUD
 
 | 기능         | 진행     | 코멘트                         |
 | ----------- | ------- | ---------------------------- |
@@ -103,7 +118,7 @@
 | 연락처 실시간 저장 기능  | ✔️       | Codable을 이용하여 Json파일로 저장 |
 
 
-### ▶︎ UI/UX 개선
+#### ▶︎ UI/UX 개선
 | 기능          | 진행       | 코멘트                             |
 | -------------| --------- | -------------------------------- |
 | 번호 입력시 자동으로 '-' 삽입 기능 | ✔️       |   생성, 수정 모두 적용            |
@@ -112,10 +127,10 @@
 | 이름, 번호 최대 11글자 까지 입력가능  | ✔️        |  그 이후에는 타이핑이 불가능             |
 
 
-### ▶︎ 실행화면
+#### ▶︎ 실행화면
 <img src="https://github.com/Youngminah/iosproject12/blob/master/gif%EC%A0%80%EC%9E%A5%EC%86%8C/PhoneBook.gif" title="phone book gif" width="30%"/>
 
-### ▶︎ 느낀점
+#### ▶︎ 느낀점
 
 
 
@@ -130,7 +145,7 @@
 -------------------------------------------------------
 <br></br>
 
-## 🐳  4. Under The Sea - Game 앱 (직접 구상)
+### 🐳  4. Under The Sea - Game 앱 (직접 구상)
 [폴더바로가기](https://github.com/Youngminah/iosproject12/tree/master/MultiThreadGame)
 
 **`MutitheradGame`: iOS Multithread GCD** 
@@ -143,10 +158,10 @@
 
 
 
-### ▶︎ 실행화면
+#### ▶︎ 실행화면
 <img src="https://github.com/Youngminah/iosproject12/blob/master/gif%EC%A0%80%EC%9E%A5%EC%86%8C/UnderTheSea.gif" alt="under the sea gif" title="Databay showcase gif" width="30%"/>
 
-### ▶︎ 느낀점
+#### ▶︎ 느낀점
 
 GCD를 가장 잘 활용해보고 써볼 수 있는 것이 게임이라고 생각하였으나, 아무리 찾아봐도 게임에선 GCD를 이용하지 않더라.
 
@@ -173,7 +188,7 @@ spriteKit없이 GCD와 애니메이션만을 이용하여 간단한 게임을 �
 -------------------------------------------------------
 <br></br>
 
-## 💡  5. Daily Notice. - OpenAPI (직접 구상)
+### 💡  5. Daily Notice. - OpenAPI (직접 구상)
 [폴더바로가기](https://github.com/Youngminah/iosproject12/tree/master/OpenAPI)
 
 **`OpenAPI`: iOS Alamofire Rest API ** 
@@ -189,13 +204,13 @@ spriteKit없이 GCD와 애니메이션만을 이용하여 간단한 게임을 �
 
 
 
-### ▶︎ 실행화면
+#### ▶︎ 실행화면
 <img src="https://github.com/Youngminah/iosproject12/blob/master/gif%EC%A0%80%EC%9E%A5%EC%86%8C/Daily%20Notice.gif" alt="under the sea gif" title="Databay showcase gif" width="30%"/>
 
 
 
 
-### ▶︎ 앱 설명
+#### ▶︎ 앱 설명
 
 3곳에서 API를 가져와 Alamofire와 Codable을 연습하는 것에 초점을 맞춘 앱이다.
 
@@ -211,7 +226,7 @@ spriteKit없이 GCD와 애니메이션만을 이용하여 간단한 게임을 �
 
 <br></br>
 
-### ▶︎ 느낀점
+#### ▶︎ 느낀점
 
 
 Rest API를 연습해보기 위해서 `어떤 주제로 어떠한 기능이 있는 앱을 구현해 볼 것인가? 어떤 UI/UX 디자인으로 깔끔해보이게 만들것인가?` 를 정하는 것이 구현 못지않게 오래걸렸다. 
